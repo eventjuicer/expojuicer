@@ -1,8 +1,8 @@
 
 import React from 'react';
-import { CardActions } from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
-import RaisedButton from 'material-ui/RaisedButton';
+import { CardActions } from '@material-ui/coreCard';
+import FlatButton from '@material-ui/coreFlatButton';
+import RaisedButton from '@material-ui/coreRaisedButton';
 
 import {Eye, Refresh} from 'mdi-material-ui';
 
@@ -11,7 +11,7 @@ import {
   // ListButton,
   // EditButton,
   // DeleteButton
-} from 'admin-on-rest';
+} from 'react-admin';
 
 import { getProfileUrl } from '../../helpers'
 

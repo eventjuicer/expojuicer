@@ -1,8 +1,8 @@
 import React from 'react'
-import RaisedButton from 'material-ui/RaisedButton';
+import RaisedButton from '@material-ui/coreRaisedButton';
 import {
     translate
-} from 'admin-on-rest';
+} from 'react-admin';
 import {Cart, Check} from 'mdi-material-ui'
 import {upgradeCreate} from '../../redux/actions';
 import {connect} from 'react-redux'

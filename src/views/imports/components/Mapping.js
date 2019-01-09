@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import compose from 'recompose/compose';
-import { translate } from 'admin-on-rest';
+import { translate } from 'react-admin';
 
-import SelectField from 'material-ui/SelectField';
-import MenuItem from 'material-ui/MenuItem';
+import SelectField from '@material-ui/coreSelectField';
+import MenuItem from '@material-ui/coreMenuItem';
 
 import { changeImportMapping as changeImportMappingAction } from '../redux/actions';
 

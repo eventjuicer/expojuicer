@@ -5,7 +5,7 @@ import {
   LongTextInput,
   TextField,
   minLength
-} from 'admin-on-rest';
+} from 'react-admin';
 
 import FullNameField from '../../fields/FullNameField';
 import { validate } from './validation';

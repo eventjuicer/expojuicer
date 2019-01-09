@@ -1,7 +1,7 @@
 
 import React from 'react';
-import withWidth from 'material-ui/utils/withWidth';
-import { AppBarMobile } from 'admin-on-rest';
+import withWidth from '@material-ui/coreutils/withWidth';
+import { AppBarMobile } from 'react-admin';
 import Welcome from './Welcome';
 import {List as TaskList} from '../tasks'
 

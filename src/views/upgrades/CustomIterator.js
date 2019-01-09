@@ -1,14 +1,14 @@
 
 import React from 'react';
-import {Card, CardHeader, CardTitle, CardActions, CardMedia, CardText} from 'material-ui/Card';
-import {translate} from 'admin-on-rest';
+import {Card, CardHeader, CardTitle, CardActions, CardMedia, CardText} from '@material-ui/coreCard';
+import {translate} from 'react-admin';
 import get from 'lodash/get'
  
 import {Check as Icon} from 'mdi-material-ui'
 
 import {  
     ShowButton 
-} from 'admin-on-rest'
+} from 'react-admin'
 
 const cardStyle = {
     width: '30%',

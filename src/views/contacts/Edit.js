@@ -10,7 +10,7 @@ import {
   SelectArrayInput
 
 
- } from 'admin-on-rest';
+ } from 'react-admin';
 
 import {validate as validateContact} from "./validation";
 

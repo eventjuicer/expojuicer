@@ -3,13 +3,13 @@ import { connect } from 'react-redux';
 
 import {
   showNotification as showNotificationAction
-} from 'admin-on-rest';
+} from 'react-admin';
 
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import PrimaryButton from 'material-ui/RaisedButton';
-import FlatButton from 'material-ui/FlatButton';
+import PrimaryButton from '@material-ui/coreRaisedButton';
+import FlatButton from '@material-ui/coreFlatButton';
 
-import IconCopy from 'material-ui/svg-icons/content/content-copy';
+import IconCopy from '@material-ui/coresvg-icons/content/content-copy';
 
 const CopyToClipboardButton = ({
   text,

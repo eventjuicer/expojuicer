@@ -5,7 +5,7 @@ import {
   FormTab,
   TextInput,
   LongTextInput
-} from 'admin-on-rest';
+} from 'react-admin';
 
 const ViewCreate = props => (
   <Create {...props}>

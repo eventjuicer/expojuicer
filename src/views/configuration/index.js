@@ -1,15 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Card, CardText } from 'material-ui/Card';
-import RaisedButton from 'material-ui/RaisedButton';
+import { Card, CardText } from '@material-ui/coreCard';
+import RaisedButton from '@material-ui/coreRaisedButton';
 import {
   translate,
   changeLocale as changeLocaleAction,
   ViewTitle
-} from 'admin-on-rest';
+} from 'react-admin';
 
 import { withRouter } from 'react-router-dom';
-import { Restricted } from 'admin-on-rest';
+import { Authenticated } from 'react-admin';
 import compose from 'recompose/compose';
 
 import { changeTheme as changeThemeAction } from '../../redux/actions';
@@ -28,7 +28,7 @@ const Configuration = ({
   translate,
   location
 }) => (
-  <Restricted authParams={{ foo: 'bar' }} location={location}>
+  <Authenticated authParams={{ foo: 'bar' }} location={location}>
     <Card>
       <ViewTitle title={translate('pos.configuration')} />
 
@@ -48,7 +48,7 @@ const Configuration = ({
       
       </CardText>
     </Card>
-  </Restricted>
+  </Authenticated>
 );
 
 Configuration.defaultProps = {

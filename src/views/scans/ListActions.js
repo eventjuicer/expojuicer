@@ -1,11 +1,11 @@
 import React from 'react';
-import { CardActions } from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
-import IconRefresh from 'material-ui/svg-icons/navigation/refresh';
-import IconDownload from 'material-ui/svg-icons/file/file-download';
-import {translate} from 'admin-on-rest';
+import { CardActions } from '@material-ui/coreCard';
+import FlatButton from '@material-ui/coreFlatButton';
+import IconRefresh from '@material-ui/coresvg-icons/navigation/refresh';
+import IconDownload from '@material-ui/coresvg-icons/file/file-download';
+import {translate} from 'react-admin';
 
-//import { ListButton } from 'admin-on-rest';
+//import { ListButton } from 'react-admin';
 import {getToken} from '../../helpers';
 
 const style = {

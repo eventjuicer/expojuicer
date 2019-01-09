@@ -1,7 +1,7 @@
 import React from 'react';
-import { translate } from 'admin-on-rest';
+import { translate } from 'react-admin';
 
-import TextField from 'material-ui/TextField';
+import TextField from '@material-ui/coreTextField';
 
 const styles = {
   width: '100%'

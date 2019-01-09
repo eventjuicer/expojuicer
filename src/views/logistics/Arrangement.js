@@ -1,8 +1,8 @@
 import React from 'react';
-import { translate } from 'admin-on-rest';
+import { translate } from 'react-admin';
 import { Link } from 'react-router-dom';
 
-import { Card } from 'material-ui/Card';
+import { Card } from '@material-ui/coreCard';
 
 import { Heading, Body, Subheading } from '../../components/Typography';
 

@@ -7,10 +7,10 @@ import {
   MenuItemLink,
   translate,
   userLogout as userLogoutAction
-} from 'admin-on-rest';
+} from 'react-admin';
 
-import IconButton from 'material-ui/IconButton';
-import Icon from 'material-ui/svg-icons/action/power-settings-new';
+import IconButton from '@material-ui/coreIconButton';
+import Icon from '@material-ui/coresvg-icons/action/power-settings-new';
 
 class Logout extends React.Component {
   logout = () => {

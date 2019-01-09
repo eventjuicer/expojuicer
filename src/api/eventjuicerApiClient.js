@@ -7,12 +7,12 @@ import {
   UPDATE,
   DELETE,
   fetchUtils
-} from 'admin-on-rest';
+} from 'react-admin';
 
 import {transform} from '../helpers';
 
 /**
- * Maps admin-on-rest queries to a json-server powered REST API
+ * Maps react-admin queries to a json-server powered REST API
  *
  * @see https://github.com/typicode/json-server
  * @example

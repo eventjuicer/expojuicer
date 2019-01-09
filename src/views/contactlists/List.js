@@ -6,7 +6,7 @@ import {
   TextInput,
   TextField,
   NumberField,
-} from 'admin-on-rest';
+} from 'react-admin';
 
 import FullNameField from '../../fields/FullNameField';
 

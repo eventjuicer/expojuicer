@@ -2,11 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 import compose from 'recompose/compose';
 
-import Paper from 'material-ui/Paper';
+import Paper from '@material-ui/corePaper';
 
-import { Card, CardTitle, CardText } from 'material-ui/Card';
+import { Card, CardTitle, CardText } from '@material-ui/coreCard';
 
-import { translate } from 'admin-on-rest';
+import { translate } from 'react-admin';
 
 const styles = {
   container: {

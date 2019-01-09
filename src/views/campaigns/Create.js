@@ -20,7 +20,7 @@ import {
 
   DateInput
 
-} from 'admin-on-rest';
+} from 'react-admin';
 
 import { validate } from './validation';
 

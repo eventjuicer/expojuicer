@@ -1,5 +1,5 @@
 import eventjuicerApiClient from './eventjuicerApiClient';
-import { fetchUtils } from 'admin-on-rest';
+import { fetchUtils } from 'react-admin';
 // import get from 'lodash/get';
 import { getToken } from '../helpers';
 

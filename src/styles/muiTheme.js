@@ -1,6 +1,6 @@
 
-import Provider from 'material-ui/styles/MuiThemeProvider';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import Provider from '@material-ui/corestyles/MuiThemeProvider';
+import getMuiTheme from '@material-ui/corestyles/getMuiTheme';
 import _get from 'lodash/get'
 
 import {
@@ -12,7 +12,7 @@ import {
   grey500,
   grey700
 
-} from 'material-ui/styles/colors';
+} from '@material-ui/corestyles/colors';
 
 //https://github.com/mui-org/material-ui/blob/master/src/styles/getMuiTheme.js
 

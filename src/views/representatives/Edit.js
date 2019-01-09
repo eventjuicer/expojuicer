@@ -5,7 +5,7 @@ import {
   TextInput,
   required,
   minLength
-} from 'admin-on-rest';
+} from 'react-admin';
 
 import { validate } from './validation';
 

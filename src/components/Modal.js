@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { translate } from 'admin-on-rest';
+import { translate } from 'react-admin';
 import compose from 'recompose/compose';
-import Dialog from 'material-ui/Dialog';
-import FlatButton from 'material-ui/FlatButton';
+import Dialog from '@material-ui/coreDialog';
+import FlatButton from '@material-ui/coreFlatButton';
 import get from 'lodash/get';
 
 import { closeModal as closeModalAction } from '../redux/actions';

@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import compose from 'recompose/compose';
-import { translate } from 'admin-on-rest';
+import { translate } from 'react-admin';
 
-import { Card, CardHeader, CardActions } from 'material-ui/Card';
+import { Card, CardHeader, CardActions } from '@material-ui/coreCard';
 
-import SecondaryButton from 'material-ui/FlatButton';
-import IconPreview from 'material-ui/svg-icons/action/visibility';
-import IconDownload from 'material-ui/svg-icons/file/file-download';
+import SecondaryButton from '@material-ui/coreFlatButton';
+import IconPreview from '@material-ui/coresvg-icons/action/visibility';
+import IconDownload from '@material-ui/coresvg-icons/file/file-download';
 import { showModal as showModalAction } from '../../../redux/actions';
 
 

@@ -4,7 +4,7 @@ import {
   CRUD_GET_LIST,
   CRUD_GET_LIST_SUCCESS,
   showNotification
-} from 'admin-on-rest';
+} from 'react-admin';
 
 //import { SPECIAL_MESSAGE_SHOW } from '../types';
 import {

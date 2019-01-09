@@ -5,12 +5,12 @@ import {
   getResources,
   translate,
   DashboardMenuItem,
-  WithPermission
-} from 'admin-on-rest';
+  WithPermissions
+} from 'react-admin';
 import compose from 'recompose/compose';
 
-import Subheader from 'material-ui/Subheader';
-//import Divider from 'material-ui/Divider';
+import Subheader from '@material-ui/coreSubheader';
+//import Divider from '@material-ui/coreDivider';
 
 
 
@@ -46,17 +46,25 @@ const Menu = ({ resources, onMenuTap, logout, translate }) => {
 
       <DashboardMenuItem onTouchTap={onMenuTap} />
   
-      {
-        menuItems.map((section) => <WithPermission key={section.name} value={getSectionItemNames(section)} resolve={({permissions, value}) => hasAccessTo(permissions, value)}>
-        <Subheader>{translate(`menu.sections.${section.name}`)}</Subheader>{
-          section.items.map((item) => <WithPermission key={`${section.name}_${item.name}`} value={item.name} resolve={({permissions, value}) => hasAccessTo(permissions, value)}>
-          <MenuItemLink 
-            to={`/${item.name}`}
-            primaryText={ translate(item.label) }
-            onClick={onMenuTap}
-            leftIcon={item.icon}
-          /></WithPermission>)}</WithPermission>)
-      }
+
+      <WithPermissions>
+        {({permissions}) => {
+
+          console.log(permissions)
+
+          return menuItems.map((section) => <div key={section.name} value={getSectionItemNames(section)} resolve={({permissions, value}) => hasAccessTo(permissions, value)}>
+          <Subheader>{translate(`menu.sections.${section.name}`)}</Subheader>{
+            section.items.map((item) => <div key={`${section.name}_${item.name}`} value={item.name} resolve={({permissions, value}) => hasAccessTo(permissions, value)}>
+            <MenuItemLink 
+              to={`/${item.name}`}
+              primaryText={ translate(item.label) }
+              onClick={onMenuTap}
+              leftIcon={item.icon}
+            /></div>)}</div>)
+
+
+        }}
+      </WithPermissions>
   
       {logout}
   

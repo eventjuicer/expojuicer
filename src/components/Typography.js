@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../styles/typography';
-import {translate} from 'admin-on-rest'
-import { Card, CardTitle } from 'material-ui/Card';
+import {translate} from 'react-admin'
+import { Card, CardTitle } from '@material-ui/coreCard';
 
 
 

@@ -1,10 +1,10 @@
 
 
 import React from 'react';
-import {translate} from 'admin-on-rest';
+import {translate} from 'react-admin';
 import _get from 'lodash/get';
 
-import Chip from 'material-ui/Chip';
+import Chip from '@material-ui/coreChip';
 import { getColorsFromTheme } from '../styles/muiTheme';
 
 const isHTML = (str = "") => str && /<[a-z][\s\S]*>/i.test(str)

@@ -1,5 +1,5 @@
 import React from 'react';
-import { translate } from 'admin-on-rest';
+import { translate } from 'react-admin';
 
 import {
   Table,
@@ -8,7 +8,7 @@ import {
   TableHeaderColumn,
   TableRow,
   TableRowColumn
-} from 'material-ui/Table';
+} from '@material-ui/coreTable';
 
 import Mapping from './Mapping';
 

@@ -5,8 +5,8 @@ import {
   FormTab,
   TextInput,
   LongTextInput
-} from 'admin-on-rest';
-import Icon from 'material-ui/svg-icons/social/person';
+} from 'react-admin';
+import Icon from '@material-ui/coresvg-icons/social/person';
 
 import { Title } from './Shared';
 

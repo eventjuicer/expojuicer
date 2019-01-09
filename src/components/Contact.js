@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { translate } from 'admin-on-rest';
-import Avatar from 'material-ui/Avatar';
-import { Card, CardHeader, CardTitle } from 'material-ui/Card';
+import { translate } from 'react-admin';
+import Avatar from '@material-ui/coreAvatar';
+import { Card, CardHeader, CardTitle } from '@material-ui/coreCard';
 import {resolveAssetPath} from '../helpers'
 
 const styles = {

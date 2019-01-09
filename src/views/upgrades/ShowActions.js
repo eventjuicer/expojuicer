@@ -1,14 +1,14 @@
 
 import React from 'react';
-import { CardActions } from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
+import { CardActions } from '@material-ui/coreCard';
+import FlatButton from '@material-ui/coreFlatButton';
 
 import {Eye, Refresh} from 'mdi-material-ui';
 
 import {
   ListButton,
   translate
-} from 'admin-on-rest';
+} from 'react-admin';
 
 import BuyAction from './BuyAction'
 

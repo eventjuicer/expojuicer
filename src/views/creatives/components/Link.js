@@ -1,13 +1,13 @@
 import React from 'react';
 // import { connect } from 'react-redux';
 // import compose from 'recompose/compose';
-import { translate } from 'admin-on-rest';
+import { translate } from 'react-admin';
 
 import compose from 'recompose/compose'
 import { connect } from 'react-redux';
 import { showModal as showModalAction } from '../../../redux/actions';
 
-import { Card, CardHeader, CardTitle, CardActions } from 'material-ui/Card';
+import { Card, CardHeader, CardTitle, CardActions } from '@material-ui/coreCard';
 
 import Share from '../../../components/Share';
 import { colorBg, colorHeader } from '../../../styles/colors';
@@ -21,7 +21,7 @@ import {
   getProfileUrl
 } from '../../../helpers'
 
-import Warning from 'material-ui/svg-icons/alert/warning';
+import Warning from '@material-ui/coresvg-icons/alert/warning';
 
 
 

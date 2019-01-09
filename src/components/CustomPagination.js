@@ -1,9 +1,9 @@
 import React from 'react';
 
-import FlatButton from 'material-ui/FlatButton';
-import ChevronLeft from 'material-ui/svg-icons/navigation/chevron-left';
-import ChevronRight from 'material-ui/svg-icons/navigation/chevron-right';
-import { Toolbar, ToolbarGroup } from 'material-ui/Toolbar';
+import FlatButton from '@material-ui/coreFlatButton';
+import ChevronLeft from '@material-ui/coresvg-icons/navigation/chevron-left';
+import ChevronRight from '@material-ui/coresvg-icons/navigation/chevron-right';
+import { Toolbar, ToolbarGroup } from '@material-ui/coreToolbar';
 
 const CustomPagination = ({ page, perPage, total, setPage }) => {
   const nbPages = Math.ceil(total / perPage) || 1;

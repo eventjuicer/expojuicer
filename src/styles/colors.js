@@ -7,7 +7,7 @@ import {
   grey100 as disabledBg,
   grey500 as disabledHeader,
   grey700 as disabledSubheader
-} from 'material-ui/styles/colors';
+} from '@material-ui/corestyles/colors';
 
 export {
   colorBg,

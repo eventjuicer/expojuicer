@@ -1,7 +1,7 @@
 import {takeEvery, all, call} from 'redux-saga/effects';
 import {
   CHANGE_LOCALE
-} from 'admin-on-rest';
+} from 'react-admin';
 
 import {lsSet} from '../../helpers'
 

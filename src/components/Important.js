@@ -1,12 +1,12 @@
 
 import React from 'react';
-import {translate} from 'admin-on-rest'
-import {Card, CardHeader, CardText} from 'material-ui/Card'
+import {translate} from 'react-admin'
+import {Card, CardHeader, CardText} from '@material-ui/coreCard'
 import {AlertCircle as IconAlert} from 'mdi-material-ui';
 import {
   yellow50 as bgColor,
   red500 as iconColor,
-} from 'material-ui/styles/colors';
+} from '@material-ui/corestyles/colors';
 
 const styles = {
 

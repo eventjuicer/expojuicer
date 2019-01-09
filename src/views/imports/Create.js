@@ -7,7 +7,7 @@ import {
   TextInput,
   required,
   minLength
-} from 'admin-on-rest';
+} from 'react-admin';
 
 import { Field } from 'redux-form';
 import ImportManually from './components/ImportManually';

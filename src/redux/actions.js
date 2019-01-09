@@ -8,7 +8,7 @@ import {
   UPGRADE_CREATE
 } from './types';
 
-import { CREATE } from 'admin-on-rest';
+import { CREATE } from 'react-admin';
 
 export const upgradeCreate = (data, basePath) => ({
     type: UPGRADE_CREATE,

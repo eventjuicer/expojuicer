@@ -1,9 +1,9 @@
 import React from 'react';
-import { translate } from 'admin-on-rest';
-import { Card, CardTitle } from 'material-ui/Card';
+import { translate } from 'react-admin';
+import { Card, CardTitle } from '@material-ui/coreCard';
 import { httpClient } from '../../api/restClient';
-// import IconEmail from 'material-ui/svg-icons/communication/email';
-// import IconImages from 'material-ui/svg-icons/image/collections';
+// import IconEmail from '@material-ui/coresvg-icons/communication/email';
+// import IconImages from '@material-ui/coresvg-icons/image/collections';
 import Image from './components/Image';
 import { Heading, Subheading, Body } from '../../components/Typography';
 import Wrapper from '../../components/Wrapper';

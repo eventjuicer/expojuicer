@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import muiThemeable from 'material-ui/styles/muiThemeable';
-import { Table, TableHeader, TableRow } from 'material-ui/Table';
+import muiThemeable from '@material-ui/corestyles/muiThemeable';
+import { Table, TableHeader, TableRow } from '@material-ui/coreTable';
 
 
 

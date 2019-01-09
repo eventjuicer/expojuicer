@@ -6,7 +6,7 @@ import {
   required,
   email,
   minLength
-} from 'admin-on-rest';
+} from 'react-admin';
 
 
 import { validate } from './validation';

@@ -8,7 +8,7 @@ import {
   required,
   email,
   minLength,
-} from 'admin-on-rest';
+} from 'react-admin';
 
 import get from 'lodash/get';
 import qs from 'query-string';

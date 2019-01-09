@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { translate } from 'admin-on-rest';
+import { translate } from 'react-admin';
 
-import { Card, CardHeader, CardActions, CardTitle } from 'material-ui/Card';
-import IconDownload from 'material-ui/svg-icons/file/file-download';
-import IconZip from 'material-ui/svg-icons/content/archive';
-import PrimaryButton from 'material-ui/RaisedButton';
-import Button from 'material-ui/FlatButton';
+import { Card, CardHeader, CardActions, CardTitle } from '@material-ui/coreCard';
+import IconDownload from '@material-ui/coresvg-icons/file/file-download';
+import IconZip from '@material-ui/coresvg-icons/content/archive';
+import PrimaryButton from '@material-ui/coreRaisedButton';
+import Button from '@material-ui/coreFlatButton';
 import { httpClient } from '../../../api/restClient';
 import Iframe from '../../../components/Iframe';
 import { getUserId } from '../../../helpers';

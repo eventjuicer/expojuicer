@@ -1,6 +1,6 @@
 //import 'babel-polyfill';
 import React from 'react';
-import { Admin, Resource, Delete, fetchUtils } from 'admin-on-rest';
+import { Admin, Resource, fetchUtils } from 'react-admin';
 
 
 import AppBarTitle from './components/AppBarTitle';
@@ -92,6 +92,8 @@ import { ViewList as ScanList, ViewEdit as ScanEdit } from './views/scans';
 
 import { ViewList as RankingList } from './views/ranking';
 
+const i18nProvider = locale => {};
+
 
 class App extends React.Component {
 
@@ -124,17 +126,18 @@ class App extends React.Component {
       <Admin
         catchAll={NotFound}
         title={<AppBarTitle />}
-        restClient={restClient}
+        dataProvider={restClient}
         customReducers={reducers}
         customSagas={sagas}
         customRoutes={customRoutes}
-        authClient={authClient}
+        authProvider={authClient}
         dashboard={Dashboard}
         loginPage={Logins}
         logoutButton={Logout}
         menu={Menu}
         locale={ getLocale() }
-        messages={ texts }
+      //  i18nProvider={i18nProvider}
+       // messages={ texts }
         theme={ getTheme() }
       >
        {(permissions) => [
@@ -151,7 +154,6 @@ name="meetups"
 list={hasAccessTo(permissions, "meetups", "list") ? MeetupList : null}
 edit={hasAccessTo(permissions, "meetups", "edit") ? MeetupEdit  : null}
 create={hasAccessTo(permissions, "meetups", "create") ? MeetupCreate  : null}
-remove={hasAccessTo(permissions, "meetups", "remove") ? Delete  : null}
 />,
 
 <Resource
@@ -166,7 +168,6 @@ name="representatives"
 list={hasAccessTo(permissions, "representatives", "list") ? RepresentativeList : null}
 edit={hasAccessTo(permissions, "representatives", "edit") ? RepresentativeEdit : null}
 create={hasAccessTo(permissions, "representatives", "create") ? RepresentativeCreate : null}
-remove={hasAccessTo(permissions, "representatives", "delete") ? Delete : null}
 />,
 
 

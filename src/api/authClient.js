@@ -4,8 +4,8 @@ import {
   AUTH_CHECK,
   AUTH_ERROR,
   AUTH_GET_PERMISSIONS
-} from 'admin-on-rest';
-import { fetchUtils } from 'admin-on-rest';
+} from 'react-admin';
+import { fetchUtils } from 'react-admin';
 
 import {
   validateToken,

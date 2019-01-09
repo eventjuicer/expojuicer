@@ -1,12 +1,12 @@
 import React from 'react';
-import {Card, CardHeader, CardTitle, CardText} from 'material-ui/Card';
+import {Card, CardHeader, CardTitle, CardText} from '@material-ui/coreCard';
 
-import Bulb from 'material-ui/svg-icons/image/brightness-1';
-//import Rejected from 'material-ui/svg-icons/action/lightbulb-outline';
-import Warning from 'material-ui/svg-icons/alert/warning';
-// import IconReward from 'material-ui/svg-icons/action/info';
+import Bulb from '@material-ui/coresvg-icons/image/brightness-1';
+//import Rejected from '@material-ui/coresvg-icons/action/lightbulb-outline';
+import Warning from '@material-ui/coresvg-icons/alert/warning';
+// import IconReward from '@material-ui/coresvg-icons/action/info';
 
-import { translate } from 'admin-on-rest';
+import { translate } from 'react-admin';
 
 import {
   Microphone,

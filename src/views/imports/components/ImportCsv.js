@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import compose from 'recompose/compose';
-import { translate } from 'admin-on-rest';
+import { translate } from 'react-admin';
 
 import Dropzone from 'react-dropzone';
 
 
-import IconButton from 'material-ui/IconButton';
-import IconRemove from 'material-ui/svg-icons/content/remove-circle-outline';
+import IconButton from '@material-ui/coreIconButton';
+import IconRemove from '@material-ui/coresvg-icons/content/remove-circle-outline';
 
 import Mappings from './Mappings';
 import styles from '../../../styles/dropzone';

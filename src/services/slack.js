@@ -1,4 +1,4 @@
-import { fetchUtils } from 'admin-on-rest';
+import { fetchUtils } from 'react-admin';
 import { getUserFullName, getCompanyName } from '../helpers';
 
 const buildMessage = message => {

@@ -2,7 +2,7 @@ import React from 'react';
 import {
   Show,
   SimpleShowLayout
-} from 'admin-on-rest';
+} from 'react-admin';
  
 import ShowActions from './ShowActions';
 import CustomField from './CustomField' 

@@ -1,8 +1,8 @@
 import React from 'react';
-import { translate, Restricted } from 'admin-on-rest';
+import { translate, Authenticated } from 'react-admin';
 import { Link } from 'react-router-dom';
 
-import { Card } from 'material-ui/Card';
+import { Card } from '@material-ui/coreCard';
 
  //import Photogrid from './Photogrid';
 
@@ -48,7 +48,7 @@ class Stats extends React.Component {
 
 
     return (
-      <Restricted authParams={{ foo: 'bar' }}>
+      <Authenticated authParams={{ foo: 'bar' }}>
         <div className="list-page">
           <Card style={{ marginTop: -25 }}>
             <Heading first={true}>
@@ -154,7 +154,7 @@ All your scans should be visible within the desktop version of expojuicer.com un
 
           </Card>
         </div>
-      </Restricted>
+      </Authenticated>
     );
   }
 }

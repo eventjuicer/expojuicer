@@ -4,10 +4,10 @@ import { propTypes, reduxForm, Field } from 'redux-form';
 import { connect } from 'react-redux';
 import compose from 'recompose/compose';
 
-import { CardActions } from 'material-ui/Card';
-import RaisedButton from 'material-ui/RaisedButton';
+import { CardActions } from '@material-ui/coreCard';
+import RaisedButton from '@material-ui/coreRaisedButton';
 
-import { translate, userLogin as userLoginAction } from 'admin-on-rest';
+import { translate, userLogin as userLoginAction } from 'react-admin';
 
 import styles from '../styles/landing';
 import renderInput from '../redux-form/TextInput';

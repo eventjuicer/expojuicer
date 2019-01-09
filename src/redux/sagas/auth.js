@@ -3,7 +3,7 @@ import { put, takeEvery, all, call } from 'redux-saga/effects';
 //import { push } from 'react-router-redux';
 import { updatePerms } from '../../helpers';
 
-import {  USER_CHECK } from 'admin-on-rest';
+import {  USER_CHECK } from 'react-admin';
 
 function* handleUserCheck(data) {
   

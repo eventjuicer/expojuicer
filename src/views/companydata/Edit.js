@@ -2,13 +2,13 @@ import React from 'react';
 import {
   Edit,
   SimpleForm
-} from 'admin-on-rest';
+} from 'react-admin';
 
 import VarLabelTextField from '../../fields/VarLabelTextField'
 import VarTextInput from '../../fields/VarTextInput'
 import { Field } from 'redux-form';
 import { validate } from './validation';
-import {translate} from 'admin-on-rest';
+import {translate} from 'react-admin';
 
 const ViewEdit = props => (
 

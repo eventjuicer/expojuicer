@@ -1,6 +1,6 @@
 import React from 'react';
-import Button from 'material-ui/FlatButton';
-import { translate } from 'admin-on-rest';
+import Button from '@material-ui/coreFlatButton';
+import { translate } from 'react-admin';
 
 //escape() will not encode: @*/+
 //encodeURI() will not encode: ~!@#$&*()=:/,;?+'

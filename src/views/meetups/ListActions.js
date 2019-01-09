@@ -1,8 +1,8 @@
 import React from 'react';
-import { CardActions } from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
-import NavigationRefresh from 'material-ui/svg-icons/navigation/refresh';
-import { translate } from 'admin-on-rest';
+import { CardActions } from '@material-ui/coreCard';
+import FlatButton from '@material-ui/coreFlatButton';
+import NavigationRefresh from '@material-ui/coresvg-icons/navigation/refresh';
+import { translate } from 'react-admin';
 
 const style = {
   zIndex: 2,

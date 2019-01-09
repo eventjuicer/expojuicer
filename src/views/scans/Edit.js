@@ -1,5 +1,5 @@
 import React from 'react';
-import { Edit, SimpleForm, LongTextInput, TextField } from 'admin-on-rest';
+import { Edit, SimpleForm, LongTextInput, TextField } from 'react-admin';
 
 import { validate } from './validation';
 

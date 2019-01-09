@@ -1,6 +1,6 @@
 import React from 'react';
 import FullNameField from '../../fields/FullNameField';
-import { NumberField } from 'admin-on-rest';
+import { NumberField } from 'react-admin';
 
 export const Title = ({ record }) =>
   record ? <FullNameField record={record} size={32} /> : null;

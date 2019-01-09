@@ -4,7 +4,7 @@ import { put, takeEvery, all } from 'redux-saga/effects';
 
 import {
   CRUD_CREATE
-} from 'admin-on-rest';
+} from 'react-admin';
 
 import {
   resetImport

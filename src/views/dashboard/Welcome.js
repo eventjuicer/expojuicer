@@ -1,6 +1,6 @@
 import React from 'react';
-import { Card, CardTitle, CardText } from 'material-ui/Card';
-import { translate } from 'admin-on-rest';
+import { Card, CardTitle, CardText } from '@material-ui/coreCard';
+import { translate } from 'react-admin';
 
 import Contact from '../../components/Contact';
 

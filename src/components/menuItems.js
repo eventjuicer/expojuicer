@@ -1,16 +1,16 @@
 import React from 'react';
 
 
-//import SettingsIcon from 'material-ui/svg-icons/action/settings';
-import ContentInbox from 'material-ui/svg-icons/content/inbox';
-import IconStatus from 'material-ui/svg-icons/action/today';
-import IconTrend from 'material-ui/svg-icons/action/trending-up';
-import IconShare from 'material-ui/svg-icons/av/volume-up';
-import IconRewards from 'material-ui/svg-icons/action/favorite';
-import IconImports from 'material-ui/svg-icons/communication/contact-mail';
-import IconLanguage from 'material-ui/svg-icons/action/language';
-import IconSetting from 'material-ui/svg-icons/action/settings';
-import IconBuild from 'material-ui/svg-icons/action/build';
+//import SettingsIcon from '@material-ui/coresvg-icons/action/settings';
+import ContentInbox from '@material-ui/coresvg-icons/content/inbox';
+import IconStatus from '@material-ui/coresvg-icons/action/today';
+import IconTrend from '@material-ui/coresvg-icons/action/trending-up';
+import IconShare from '@material-ui/coresvg-icons/av/volume-up';
+import IconRewards from '@material-ui/coresvg-icons/action/favorite';
+import IconImports from '@material-ui/coresvg-icons/communication/contact-mail';
+import IconLanguage from '@material-ui/coresvg-icons/action/language';
+import IconSetting from '@material-ui/coresvg-icons/action/settings';
+import IconBuild from '@material-ui/coresvg-icons/action/build';
 
 import {
   PackageVariantClosed as IconLogistics,

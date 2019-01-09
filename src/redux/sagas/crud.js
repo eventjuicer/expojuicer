@@ -2,7 +2,7 @@
 import { put, takeEvery, all, call } from 'redux-saga/effects';
 import { refreshUserData } from '../../helpers';
 import { push } from 'react-router-redux';
-import { showNotification } from 'admin-on-rest';
+import { showNotification } from 'react-admin';
 import get from 'lodash/get'
 import {UPGRADE_CREATE_SUCCESS} from '../types'
 
@@ -12,7 +12,7 @@ import slack from '../../services/slack';
 import {
   CRUD_CREATE_SUCCESS,
   CRUD_UPDATE_SUCCESS
-} from 'admin-on-rest';
+} from 'react-admin';
 
 
 function* handleSlackNotification({meta, payload, requestPayload}) {

@@ -5,7 +5,7 @@ import {
   FormTab,
   TextInput,
   LongTextInput
-} from 'admin-on-rest';
+} from 'react-admin';
 
 import FullNameField from '../../fields/FullNameField';
 

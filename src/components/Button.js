@@ -2,10 +2,10 @@ import React from 'react';
 
 import {
   translate
-} from 'admin-on-rest';
+} from 'react-admin';
 
-import PrimaryButton from 'material-ui/RaisedButton';
-import FlatButton from 'material-ui/FlatButton';
+import PrimaryButton from '@material-ui/coreRaisedButton';
+import FlatButton from '@material-ui/coreFlatButton';
 import {Eye} from 'mdi-material-ui'
 
 const Button = ({raised, label, icon, translate, locale, ...rest}) => (
