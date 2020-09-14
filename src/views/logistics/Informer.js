@@ -1,7 +1,9 @@
 import React from 'react';
 
-import { translate } from 'admin-on-rest';
-import { Tabs, Tab } from 'material-ui/Tabs';
+import { translate } from 'react-admin';
+
+import Tab  from '@material-ui/core/Tab';
+import Tabs from '@material-ui/core/Tabs';
 
 import {
   ExhibitionSpace,

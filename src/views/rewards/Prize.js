@@ -1,24 +1,27 @@
 import React from 'react';
-import {Card, CardHeader, CardTitle, CardText} from 'material-ui/Card';
 
-import Bulb from 'material-ui/svg-icons/image/brightness-1';
-//import Rejected from 'material-ui/svg-icons/action/lightbulb-outline';
-import Warning from 'material-ui/svg-icons/alert/warning';
-// import IconReward from 'material-ui/svg-icons/action/info';
+import Card from '@material-ui/core/Card';
+import CardHeader from '@material-ui/core/CardHeader';
+import Typography from '@material-ui/core/Typography';
 
-import { translate } from 'admin-on-rest';
+import Bulb from '@material-ui/icons/Brightness7';
+//import Rejected from '@material-ui/icons/lightbulb-outline';
+import Warning from '@material-ui/icons/Warning';
+// import IconReward from '@material-ui/icons/info';
+
+import { translate } from 'react-admin';
 
 import {
-  Microphone,
-  Video,
-  Eye,
-  Ticket,
-  Calendar,
-  BarcodeScan,
-  VolumeHigh,
-  Newspaper,
-  SquareIncCash
-} from 'mdi-material-ui'
+  Mic as Microphone,
+  Movie as Video,
+  Visibility as Eye,
+  Receipt as Ticket,
+  Event as Calendar,
+  Scanner as BarcodeScan,
+  VolumeUp,
+  Receipt as Newspaper,
+  AttachMoney as SquareIncCash
+} from '@material-ui/icons'
 
 import {
   success,
@@ -44,7 +47,7 @@ const Icons = {
   leaflets : Ticket,
   meetups : Calendar,
   scanner : BarcodeScan,
-  rollups : VolumeHigh,
+  rollups : VolumeUp,
   blog : Newspaper,
   earlybird : SquareIncCash
 }
@@ -100,16 +103,18 @@ const Prize = ({ translate, prize, position, sessions }) => {
           avatar={<Icon style={styles.avatar} /> }
           style={{padding: 12}}
           title={
-              <CardTitle
-                title={ translate(`prizes.${prize.name}.title`) }
-                subtitle={ translate(`prizes.${prize.name}.description`) }
-              />
+              <div>
+                <Typography>{translate(`prizes.${prize.name}.title`)}</Typography>
+                <Typography>{translate(`prizes.${prize.name}.description`)}</Typography>
+              </div>
           }
-          subtitle={  <CardHeader
-              title={conditions(prize, translate)}
-              avatar={avatar(prize, position, sessions)}
-              style={{paddingTop:0}}
-            />}
+          subheader={  
+            <div>
+               <Typography>{conditions(prize, translate)}</Typography>
+              <Typography>{avatar(prize, position, sessions)}</Typography>
+            </div>
+           
+       }
 
         />
       </Card>

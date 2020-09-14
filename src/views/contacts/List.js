@@ -7,7 +7,7 @@ import {
   ReferenceArrayField,
   SingleFieldList,
   ChipField
-} from 'admin-on-rest';
+} from 'react-admin';
 
 
 import FullNameField from '../../fields/FullNameField';

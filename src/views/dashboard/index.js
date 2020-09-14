@@ -1,7 +1,7 @@
 
 import React from 'react';
-import withWidth from 'material-ui/utils/withWidth';
-import { AppBarMobile } from 'admin-on-rest';
+import withWidth from '@material-ui/core/withWidth';
+// import { AppBarMobile } from 'react-admin';
 import Welcome from './Welcome';
 import {List as TaskList} from '../tasks'
 
@@ -13,7 +13,7 @@ const Dashboard = ({ width, history }) => (
 
   <div style={styles.welcome}>
 
-    {width === 1 && <AppBarMobile title={`${process.env.REACT_APP_SITENAME}`} />}
+    {/* {width === 1 && <AppBarMobile title={`${process.env.REACT_APP_SITENAME}`} />} */}
 
     <Welcome />
 

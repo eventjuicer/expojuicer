@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import compose from 'recompose/compose';
-import { translate } from 'admin-on-rest';
+import { translate } from 'react-admin';
 
-import SelectField from 'material-ui/SelectField';
-import MenuItem from 'material-ui/MenuItem';
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
 
 import { changeImportMapping as changeImportMappingAction } from '../redux/actions';
 
@@ -54,7 +54,7 @@ class Mapping extends React.Component {
     const { translate, index, mappings } = this.props;
 
     return (
-      <SelectField
+      <Select
         floatingLabelText={translate('resources.imports.fields.assignment_body')}
         value={get(mappings, index, 'skip')}
         onChange={(ev, idx, value) => this.handleMappingChange(value)}
@@ -66,7 +66,7 @@ class Mapping extends React.Component {
             primaryText={translate(`fields.${item}`)}
           />
         ))}
-      </SelectField>
+      </Select>
     );
   }
 }

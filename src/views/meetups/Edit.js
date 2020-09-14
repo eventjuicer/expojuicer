@@ -2,10 +2,10 @@ import React from 'react';
 import {
   Edit,
   SimpleForm,
-  LongTextInput,
+  TextInput,
   TextField,
   minLength
-} from 'admin-on-rest';
+} from 'react-admin';
 
 import FullNameField from '../../fields/FullNameField';
 import { validate, basicValidation } from './validation';
@@ -22,7 +22,7 @@ const ViewEdit = props => (
         style={{ maxWidth: 544 }}
       />
 
-      <LongTextInput source="comment" style={{ maxWidth: 544 }} />
+      <TextInput multiline source="comment" style={{ maxWidth: 544 }} />
 
       <TextField source="participant.profile.fname" />
       <TextField source="participant.profile.lname" />

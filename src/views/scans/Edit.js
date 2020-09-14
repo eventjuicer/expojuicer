@@ -1,5 +1,5 @@
 import React from 'react';
-import { Edit, SimpleForm, LongTextInput, TextField } from 'admin-on-rest';
+import { Edit, SimpleForm, TextField, TextInput } from 'react-admin';
 
 import { validate } from './validation';
 
@@ -11,7 +11,7 @@ const ViewCreate = props => (
       <TextField source="participant.profile.cname2" />
       <TextField source="participant.profile.position" />
 
-      <LongTextInput source="comment" style={{ maxWidth: 544 }} />
+      <TextInput multiline source="comment" style={{ maxWidth: 544 }} />
     </SimpleForm>
   </Edit>
 );

@@ -1,17 +1,16 @@
 
 import React from 'react';
-import { CardActions } from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
-import RaisedButton from 'material-ui/RaisedButton';
-
-import {Eye, Refresh} from 'mdi-material-ui';
+import CardActions  from '@material-ui/core/CardActions';
+import Button from '@material-ui/core/Button';
+ 
+import {Visibility as Eye, Refresh} from '@material-ui/icons';
 
 import {
   translate,
   // ListButton,
   // EditButton,
   // DeleteButton
-} from 'admin-on-rest';
+} from 'react-admin';
 
 import { getProfileUrl } from '../../helpers'
 
@@ -27,7 +26,7 @@ const Actions = ({ basePath, data, refresh, resource, translate, ...rest }) => (
 
   <CardActions style={style}>
 
-    <RaisedButton
+    <Button
       primary
       label={translate(`resources.${resource}.actions.preview`)}
       href={getProfileUrl("", true)}
@@ -39,14 +38,14 @@ const Actions = ({ basePath, data, refresh, resource, translate, ...rest }) => (
     <ListButton basePath={basePath} />
     <DeleteButton basePath={basePath} record={data} /> */}
 
-    <FlatButton
+    <Button
       primary
       label={translate('aor.action.refresh')}
       onClick={refresh}
       icon={<Refresh />}
     />
     {/* Add your custom actions */}
-    {/* <FlatButton primary label="Custom Action" onClick={customAction} /> */}
+    {/* <Button primary label="Custom Action" onClick={customAction} /> */}
   </CardActions>
 );
 

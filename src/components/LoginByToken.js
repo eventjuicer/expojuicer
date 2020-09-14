@@ -6,7 +6,8 @@ import {
   showNotification as showNotificationAction,
   translate,
   userLogin as userLoginAction
-} from 'admin-on-rest';
+} from 'react-admin';
+
 import qs from 'query-string';
 import get from 'lodash/get';
 import styles from '../styles/landing';

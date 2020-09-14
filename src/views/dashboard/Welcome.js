@@ -1,6 +1,10 @@
 import React from 'react';
-import { Card, CardTitle, CardText } from 'material-ui/Card';
-import { translate } from 'admin-on-rest';
+
+import Card from '@material-ui/core/Card';
+import CardHeader from '@material-ui/core/CardHeader';
+import Typography from '@material-ui/core/Typography';
+
+import { translate } from 'react-admin';
 
 import Contact from '../../components/Contact';
 
@@ -9,12 +13,12 @@ import {SectionTitle} from '../../components/Typography'
 export default translate(({ style, translate }) => (
 
   <Card style={style}>
-    <CardTitle
+    <CardHeader
       title={translate('dashboard.welcome.title')}
-      subtitle={translate('dashboard.welcome.subtitle')}
+      subheader={translate('dashboard.welcome.subtitle')}
     />
 
-    <CardText>{translate('dashboard.welcome.description')}</CardText>
+    <Typography>{translate('dashboard.welcome.description')}</Typography>
 
     <div style={{margin: 10, paddingBottom: 50}}>
 

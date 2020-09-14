@@ -2,8 +2,8 @@
 
 
 import React from 'react';
-import { translate } from 'admin-on-rest';
-import { Card } from 'material-ui/Card';
+import { translate } from 'react-admin';
+import Card  from '@material-ui/core/Card';
 
 
 //import { Heading, Body } from '../../components/Typography';

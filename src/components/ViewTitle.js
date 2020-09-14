@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import compose from 'recompose/compose';
-import { CardTitle } from 'material-ui/Card';
-import { translate } from 'admin-on-rest';
+import CardHeader  from '@material-ui/core/CardHeader';
+import { translate } from 'react-admin';
 import get from 'lodash/get';
 
 const Limit = props => {
@@ -15,10 +15,10 @@ const Limit = props => {
     : '';
 
   return (
-    <CardTitle
+    <CardHeader
       style={{ padding: 0 }}
       title={title + limit}
-      subtitle={
+      subheader={
         props.limit || props.subtitle
           ? props.translate(`resources.${props.resource}.subtitle`)
           : null

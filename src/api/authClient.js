@@ -1,11 +1,13 @@
+
 import {
   AUTH_LOGIN,
   AUTH_LOGOUT,
   AUTH_CHECK,
   AUTH_ERROR,
   AUTH_GET_PERMISSIONS
-} from 'admin-on-rest';
-import { fetchUtils } from 'admin-on-rest';
+} from 'react-admin';
+
+import { fetchUtils } from 'react-admin';
 
 import {
   validateToken,
@@ -15,22 +17,56 @@ import {
   checkAccessFor
 } from '../helpers';
 
-export default (type, params) => {
+export default  {
+
+
+  login: ({ username, password }) => {
+    const request = new Request('https://mydomain.com/authenticate', {
+        method: 'POST',
+        body: JSON.stringify({ username, password }),
+        headers: new Headers({ 'Content-Type': 'application/json' }),
+    });
+    return fetch(request)
+        .then(response => {
+            if (response.status < 200 || response.status >= 300) {
+                throw new Error(response.statusText);
+            }
+            return response.json();
+        })
+        .then(({ token }) => {
+       //     const decodedToken = decodeJwt(token);
+         //   localStorage.setItem('token', token);
+           // localStorage.setItem('permissions', decodedToken.permissions);
+        });
+},
+logout: () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('permissions');
+    return Promise.resolve();
+},
+checkError: error => {
+   
+},
+checkAuth: () => {
+    return localStorage.getItem('token') ? Promise.resolve() : Promise.reject();
+},
+getPermissions: () => {
+    const role = localStorage.getItem('permissions');
+    return role ? Promise.resolve(role) : Promise.reject();
+}
+
+
+
+/** BACKUP BELOW */
+
+
+
+
+
   /*
 
-err AUTH_CHECK {resource: "visitors", route: "list"}
-err AUTH_GET_PERMISSIONS {record: undefined, resource: undefined}
-err AUTH_LOGOUT undefined
-
-AUTH_ERROR Error: Unauthorized
-    at new HttpError (HttpError.js:64)
-    at fetch.js:63
-    at <anonymous>
-
-    console.log(type, params);
 
 
-*/
 
 
   if (type === AUTH_ERROR) {
@@ -93,4 +129,9 @@ AUTH_ERROR Error: Unauthorized
   }
 
   return Promise.reject('Unknown authClient method');
+
+
+
+*/
+
 };

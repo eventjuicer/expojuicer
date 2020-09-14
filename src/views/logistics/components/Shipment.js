@@ -1,6 +1,6 @@
 import React from 'react';
-import {translate} from 'admin-on-rest';
-import Divider from 'material-ui/Divider';
+import {translate} from 'react-admin';
+import Divider from '@material-ui/core/Divider';
 
 
 import * as Typo from '../../../components/Typography';

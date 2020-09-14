@@ -2,12 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import compose from 'recompose/compose';
 import { Link } from 'react-router-dom';
-import { translate } from 'admin-on-rest';
+import { translate } from 'react-admin';
 import get from 'lodash/get';
 import { stringify } from 'query-string';
 
-import FlatButton from 'material-ui/FlatButton';
-import Icon from 'material-ui/svg-icons/editor/insert-invitation';
+import Button from '@material-ui/core/Button';
+import Icon from '@material-ui/icons/InsertInvitation';
 
 /*
 
@@ -28,7 +28,7 @@ const InviteButton = ({
   translate
 }) =>
   get(limits, resource, true) ? (
-    <FlatButton
+    <Button
       primary
       label={translate("resources.visitors.actions.invite")}
       icon={<Icon />}
@@ -43,7 +43,7 @@ const InviteButton = ({
       }
     />
   ) : (
-    <FlatButton
+    <Button
       disabled
       label={translate('resources.visitors.actions.invite')}
       icon={<Icon />}

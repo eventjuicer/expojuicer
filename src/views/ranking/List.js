@@ -5,7 +5,7 @@ import {
   Datagrid,
   //  Filter,
   TextField
-} from 'admin-on-rest';
+} from 'react-admin';
 
 import PointsField from './components/PointsField';
 import ViewTitle from '../../components/ViewTitle';

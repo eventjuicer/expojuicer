@@ -1,10 +1,17 @@
 
 import React from 'react';
-import {Card, CardHeader, CardTitle, CardActions, CardMedia, CardText} from 'material-ui/Card';
-import {translate} from 'admin-on-rest';
+
+import Card from '@material-ui/core/Card';
+import CardHeader from '@material-ui/core/CardHeader';
+import CardActions from '@material-ui/core/CardActions';
+import CardMedia from '@material-ui/core/CardMedia';
+ 
+
+
+import {translate} from 'react-admin';
 import get from 'lodash/get'
  
-import {Check as Icon} from 'mdi-material-ui'
+import Icon from '@material-ui/icons/Check'
 import { push } from 'react-router-redux';
 import { connect } from 'react-redux';
 import compose from 'recompose/compose'
@@ -12,7 +19,7 @@ import compose from 'recompose/compose'
 import {  
     ShowButton,
     linkToRecord
-} from 'admin-on-rest'
+} from 'react-admin'
 
 const cardStyle = {
     cursor: 'pointer',
@@ -34,11 +41,11 @@ const CustomIterator = ({ ids, data, basePath, locale, translate, push }) => (
         return (
             <Card key={id} style={cardStyle} onClick={() => push(`${basePath}/${get(data[id], "id")}/show`)}>
 
-            <CardTitle 
+            <CardHeader 
                 title={
                    translate( `${get(data[id], `names.${locale}`)}.name` )
                 } 
-                // subtitle={
+                // subheader={
                 //    translate( `${data[id].names[locale]}.description` )
                 // }
             />
@@ -46,13 +53,13 @@ const CustomIterator = ({ ids, data, basePath, locale, translate, push }) => (
             <div style={{position : 'relative'}}>
                 <CardMedia 
                 overlay={
-                <CardTitle 
+                <CardHeader 
                     title={
                         data[id].bookable > 0 || data[id].booked > 0 ? 
                         `${ get(data[id], `price.${locale}`) } ${locale==="pl" ? "PLN" : "EUR"} ${translate("common.sales.net")}` : 
                         `${translate("common.statuses.unavailable")}`
                     } 
-                    subtitle={
+                    subheader={
                         `
                         ${translate("common.sales.ends")}: ${data[id].end}
                         ${translate("common.sales.remaining")}: ${data[id].bookable} 
@@ -88,10 +95,7 @@ const CustomIterator = ({ ids, data, basePath, locale, translate, push }) => (
                 
                 </div>
             </div>
-         
-            <CardText>
-              
-            </CardText>
+     
           
             <CardActions style={{ textAlign: 'right' }}>
                 {/* <ItemStatusField record={data[id]} source="booked" /> */}

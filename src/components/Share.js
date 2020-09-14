@@ -1,19 +1,19 @@
 import React from 'react';
-import Button from 'material-ui/FlatButton';
-import { translate } from 'admin-on-rest';
+import Button from '@material-ui/core/Button';
+import { translate } from 'react-admin';
 
 //escape() will not encode: @*/+
 //encodeURI() will not encode: ~!@#$&*()=:/,;?+'
 //encodeURIComponent() will not encode: ~!*()'
 import {
-    Linkedin,
+    LinkedIn,
     Facebook,
     Twitter
-} from 'mdi-material-ui'
+} from '@material-ui/icons'
 
 
 const Icons = {
-  linkedin : Linkedin,
+  linkedin : LinkedIn,
   facebook : Facebook,
   twitter : Twitter
 }

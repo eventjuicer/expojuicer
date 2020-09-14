@@ -6,7 +6,7 @@ import {
   List,
   TextField,
   SelectInput
-} from 'admin-on-rest';
+} from 'react-admin';
 
 import StatusField from './components/StatusField';
 import StatusAwareDeleteButton from './components/StatusAwareDeleteButton';

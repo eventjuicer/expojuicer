@@ -10,7 +10,6 @@ import {
   SimpleForm,
 
   TextInput,
-  LongTextInput,
 
   ReferenceInput,
   SelectInput,
@@ -20,7 +19,7 @@ import {
 
   DateInput
 
-} from 'admin-on-rest';
+} from 'react-admin';
 
 import { validate } from './validation';
 
@@ -60,7 +59,8 @@ const ViewCreate = props => (
         style={{ display: 'inline-block', marginLeft: 32 }}
       />
 
-      <LongTextInput
+      <TextInput
+        multiline
         source="data.subject"
         options={{ fullWidth: true }}
         style={{ width: 544 }}

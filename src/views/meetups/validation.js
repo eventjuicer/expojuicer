@@ -4,7 +4,7 @@ import {
   required,
   email,
   minLength
-} from 'admin-on-rest';
+} from 'react-admin';
 
 export const validate = values => {
   const errors = {};

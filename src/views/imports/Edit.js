@@ -3,10 +3,9 @@ import {
   Edit,
   TabbedForm,
   FormTab,
-  TextInput,
-  LongTextInput
-} from 'admin-on-rest';
-import Icon from 'material-ui/svg-icons/social/person';
+  TextInput
+} from 'react-admin';
+import Icon from '@material-ui/icons/Person';
 
 import { Title } from './Shared';
 
@@ -29,7 +28,8 @@ const ViewEdit = props => (
           style={{ width: 544 }}
         />
 
-        <LongTextInput
+        <TextInput
+          multiline
           label="resources.visitors.tabs.message"
           source="invitation"
           style={{ maxWidth: 544 }}

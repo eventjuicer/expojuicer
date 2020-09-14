@@ -1,13 +1,16 @@
 import React from 'react';
 // import { connect } from 'react-redux';
 // import compose from 'recompose/compose';
-import { translate } from 'admin-on-rest';
+import { translate } from 'react-admin';
 
 import compose from 'recompose/compose'
 import { connect } from 'react-redux';
 import { showModal as showModalAction } from '../../../redux/actions';
 
-import { Card, CardHeader, CardTitle, CardActions } from 'material-ui/Card';
+import Card from '@material-ui/core/Card';
+import CardHeader from '@material-ui/core/CardHeader';
+import CardActions from '@material-ui/core/CardActions';
+import Typography from '@material-ui/core/Typography'
 
 import Share from '../../../components/Share';
 import { colorBg, colorHeader } from '../../../styles/colors';
@@ -20,7 +23,7 @@ import {
   getProfileUrl
 } from '../../../helpers'
 
-import Warning from 'material-ui/svg-icons/alert/warning';
+import Warning from '@material-ui/icons/Warning';
 
 
 const filterSharables = (creative) => {
@@ -46,20 +49,30 @@ const Creative = ({ creative, translate, showModal }) => (
 
         style={{padding: 0}}
         title={
-          <CardTitle
-            title={ `
-              ${ translate(`resources.creatives.links.${creative.name}.title`)}
-              ${ translate(`resources.creatives.langs.${creative.lang}`)} 
-              `}
-            subtitle={translate(`resources.creatives.links.${creative.name}.description`)}
-          />
+
+          <div>
+          <Typography>{ translate(`resources.creatives.links.${creative.name}.title`) }</Typography>
+          <Typography>{ translate(`resources.creatives.langs.${creative.lang}`) }</Typography>
+          <Typography>{ translate(`resources.creatives.links.${creative.name}.description`) }</Typography>
+
+          </div>
+
+       
         }
-        subtitle={    <CardHeader
-          //style={{ backgroundColor: colorHeader }}
-            title={ ! isEnabled(creative) ? <Requirements label="resources.creatives.links.disabled" data={creative.requires} /> : null }
-            avatar={! isEnabled(creative) ? <Warning color="#F44336" /> : null }
-            style={{paddingTop:0}}
-          />
+        subheader={    
+
+          <div>
+
+          </div>
+        
+        // <CardHeader
+        //   //style={{ backgroundColor: colorHeader }}
+        //     title={ ! isEnabled(creative) ? <Requirements label="resources.creatives.links.disabled" data={creative.requires} /> : null }
+        //     avatar={! isEnabled(creative) ? <Warning color="#F44336" /> : null }
+        //     style={{paddingTop:0}}
+        //   />
+
+
         }
 
       />

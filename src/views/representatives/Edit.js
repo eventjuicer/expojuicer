@@ -3,7 +3,7 @@ import {
   Edit,
   SimpleForm,
   TextInput
-} from 'admin-on-rest';
+} from 'react-admin';
 
 import { basicValidation } from './validation';
 

@@ -1,4 +1,4 @@
-import { englishMessages } from 'admin-on-rest';
+import { englishMessages } from 'react-admin';
 
 import en from "./langs/en"
 import de from "./langs/de"

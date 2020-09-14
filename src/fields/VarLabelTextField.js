@@ -1,5 +1,5 @@
 import React from 'react';
-import {translate} from 'admin-on-rest'
+import {translate} from 'react-admin'
 
 const VarLabelTextField = props => {
 

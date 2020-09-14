@@ -2,22 +2,22 @@ import React from 'react';
 
 import {
   translate
-} from 'admin-on-rest';
+} from 'react-admin';
 
-import PrimaryButton from 'material-ui/RaisedButton';
-import FlatButton from 'material-ui/FlatButton';
-import {Eye} from 'mdi-material-ui'
+import MuiButton from '@material-ui/core/Button';
+import Visibility from '@material-ui/icons/Visibility'
 
+ 
 const Button = ({raised, label, icon, translate, locale, ...rest}) => (
 
   raised ?
-    <PrimaryButton
+    <MuiButton
       label={ translate(label) }
       icon={icon}
       primary={true}
       {...rest}
       />
-   : <FlatButton
+   : <MuiButton
       label={ translate(label) }
       icon={icon}
       {...rest}
@@ -28,7 +28,7 @@ const Button = ({raised, label, icon, translate, locale, ...rest}) => (
 
 Button.defaultProps = {
   raised : false,
-  icon : <Eye />
+  icon : <Visibility />
 }
 
 export default translate(Button)

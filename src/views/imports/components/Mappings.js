@@ -1,35 +1,35 @@
 import React from 'react';
-import { translate } from 'admin-on-rest';
+import { translate } from 'react-admin';
 
 import {
   Table,
   TableBody,
-  TableHeader,
-  TableHeaderColumn,
+  TableHead,
+  TableCell,
   TableRow,
   TableRowColumn
-} from 'material-ui/Table';
+} from '@material-ui/core';
 
 import Mapping from './Mapping';
 
 const Mappings = props => (
   <Table selectable={false}>
-    <TableHeader displaySelectAll={false}>
+    <TableHead displaySelectAll={false}>
       <TableRow>
-        <TableHeaderColumn>{translate("resources.imports.fields.found")}</TableHeaderColumn>
-        <TableHeaderColumn>{translate("resources.imports.fields.assignment")}</TableHeaderColumn>
+        <TableCell>{translate("resources.imports.fields.found")}</TableCell>
+        <TableCell>{translate("resources.imports.fields.assignment")}</TableCell>
       </TableRow>
-    </TableHeader>
+    </TableHead>
 
     <TableBody displayRowCheckbox={false}>
       {props.data.map((cell, i) => {
         return (
           cell.length && (
             <TableRow key={i}>
-              <TableRowColumn>{cell}</TableRowColumn>
-              <TableRowColumn>
+              <TableCell>{cell}</TableCell>
+              <TableCell>
                 <Mapping key={i} index={i} cell={cell} />
-              </TableRowColumn>
+              </TableCell>
             </TableRow>
           )
         );

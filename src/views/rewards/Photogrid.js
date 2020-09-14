@@ -2,9 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 //import compose from 'recompose/compose';
 
-import { GridList, GridTile } from 'material-ui/GridList';
-import IconButton from 'material-ui/IconButton';
-import IconPreview from 'material-ui/svg-icons/action/visibility';
+import { GridList, GridTile } from '@material-ui/core/GridList';
+import IconButton from '@material-ui/core/IconButton';
+import IconPreview from '@material-ui/icons/visibility';
 
 import { showModal as showModalAction } from '../../redux/actions';
 

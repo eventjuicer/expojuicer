@@ -3,13 +3,12 @@ import { connect } from 'react-redux';
 
 import {
   showNotification as showNotificationAction
-} from 'admin-on-rest';
+} from 'react-admin';
 
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import PrimaryButton from 'material-ui/RaisedButton';
-import FlatButton from 'material-ui/FlatButton';
+ import Button from '@material-ui/core/Button';
 
-import IconCopy from 'material-ui/svg-icons/content/content-copy';
+import IconCopy from '@material-ui/icons/FileCopy';
 
 const CopyToClipboardButton = ({
   text,
@@ -23,9 +22,9 @@ const CopyToClipboardButton = ({
     onCopy={() => showNotification('actions.copied')}
   >
     {raised ? (
-      <PrimaryButton disabled={disabled} label={label} icon={<IconCopy />} primary={true} />
+      <Button disabled={disabled} label={label} icon={<IconCopy />} primary={true} />
     ) : (
-      <FlatButton disabled={disabled} label={label} icon={<IconCopy />} />
+      <Button disabled={disabled} label={label} icon={<IconCopy />} />
     )}
   </CopyToClipboard>
 );

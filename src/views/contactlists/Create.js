@@ -7,7 +7,7 @@ import {
   TextInput,
   required,
   minLength
-} from 'admin-on-rest';
+} from 'react-admin';
 
 import { validate as validateInvites } from './validation';
 // import { Heading, Subheading, Body } from '../../components/Typography';

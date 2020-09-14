@@ -1,18 +1,21 @@
 
 import React from 'react';
-import {translate} from 'admin-on-rest'
-import {Card, CardHeader, CardText} from 'material-ui/Card'
-import {AlertCircle as IconAlert} from 'mdi-material-ui';
+import {translate} from 'react-admin'
+
+import Card from '@material-ui/core/Card'
+import CardHeader from '@material-ui/core/CardHeader'
+ 
+import IconAlert from '@material-ui/icons/Warning';
+
 import {
-  yellow50 as bgColor,
-  red500 as iconColor,
-} from 'material-ui/styles/colors';
+  yellow, red,
+} from '@material-ui/core/colors';
 
 const styles = {
 
   card : {
     boxShadow:'none',
-    backgroundColor : bgColor,
+    backgroundColor : yellow[50],
     marginTop : 20,
     marginBottom : 20
   },
@@ -26,9 +29,10 @@ const styles = {
 const Important = ({translate, label, children}) => (
 
   <Card style={styles.card}><CardHeader
-    avatar={<IconAlert color={iconColor} />}
+    avatar={<IconAlert color={red[500]} />}
     title={translate(label)}
-  />{children ? <CardText style={styles.secondary}>{children}</CardText> : null}</Card>
+    subheader={ children ? children : null}
+  /></Card>
 )
 
 Important.defaultProps = {

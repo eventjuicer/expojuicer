@@ -1,13 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import compose from 'recompose/compose';
-import { translate } from 'admin-on-rest';
+import { translate } from 'react-admin';
 
-import { Card, CardHeader, CardActions } from 'material-ui/Card';
 
-import SecondaryButton from 'material-ui/FlatButton';
-import IconPreview from 'material-ui/svg-icons/action/visibility';
-import IconDownload from 'material-ui/svg-icons/file/file-download';
+ 
+
+import Card from '@material-ui/core/Card'
+import CardHeader from '@material-ui/core/CardHeader'
+import CardActions from '@material-ui/core/CardActions'
+
+
+import Button from '@material-ui/core/Button';
+import IconPreview from '@material-ui/icons/Visibility';
+import IconDownload from '@material-ui/icons/GetApp';
 import { showModal as showModalAction } from '../../../redux/actions';
 
 
@@ -40,7 +46,7 @@ const Creative = ({ creative, showModal, translate }) => (
 
       {'image' in creative && (
         <Monitor name="image downloaded" services={['slack']}>
-          <SecondaryButton
+          <Button
             download={true}
             target="_blank"
             label={translate("resources.creatives.actions.download")}
@@ -61,7 +67,7 @@ const Creative = ({ creative, showModal, translate }) => (
         </Monitor>
       )}
 
-      <SecondaryButton
+      <Button
         label={translate("resources.creatives.actions.preview")}
         icon={<IconPreview />}
         onClick={() =>

@@ -1,15 +1,14 @@
 import React from 'react';
 
 import {
-  LongTextInput,
-//  TextInput,
+  TextInput,
   CheckboxGroupInput,
   RadioButtonGroupInput
-} from 'admin-on-rest'
+} from 'react-admin'
 
 import pure from 'recompose/pure'
 
-import RichTextInput from 'aor-rich-text-input';
+import RichTextInput from 'ra-input-rich-text';
 
 //https://quilljs.com/docs/modules/toolbar/
 
@@ -81,7 +80,7 @@ const VarTextInput = props => {
   }
 
   return (
-    <LongTextInput {...props}  />
+    <TextInput multiline {...props}  />
   )
 }
 

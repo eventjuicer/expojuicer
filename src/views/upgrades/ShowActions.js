@@ -1,14 +1,15 @@
 
 import React from 'react';
-import { CardActions } from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
+import CardActions from '@material-ui/core/CardActions';
+import Button from '@material-ui/core/Button';
 
-import {Eye, Refresh} from 'mdi-material-ui';
+import Visibility from  '@material-ui/icons/Refresh'
+import Refresh from '@material-ui/icons/Refresh'
 
 import {
   ListButton,
   translate
-} from 'admin-on-rest';
+} from 'react-admin';
 
 import BuyAction from './BuyAction'
 
@@ -26,7 +27,7 @@ const Actions = ({ basePath, data, refresh, resource, translate, ...rest }) => (
     
     <ListButton basePath={basePath} />
 
-    <FlatButton
+    <Button
       primary
       label={translate('aor.action.refresh')}
       onClick={refresh}

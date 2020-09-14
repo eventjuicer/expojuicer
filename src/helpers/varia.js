@@ -1,5 +1,5 @@
 
-import { fetchUtils } from 'admin-on-rest';
+import { fetchUtils } from 'react-admin';
 import get from 'lodash/get';
 import slugify from 'slugify'
 

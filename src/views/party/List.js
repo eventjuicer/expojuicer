@@ -5,7 +5,7 @@ import {
   List,
   TextField,
   DeleteButton
-} from 'admin-on-rest';
+} from 'react-admin';
 
 import ViewTitle from '../../components/ViewTitle';
 

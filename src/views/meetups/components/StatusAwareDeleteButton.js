@@ -2,10 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import compose from 'recompose/compose';
 
-import { DeleteButton, translate } from 'admin-on-rest';
+import { DeleteButton, translate } from 'react-admin';
 
-import IconButton from 'material-ui/IconButton';
-import IconDelete from 'material-ui/svg-icons/action/delete';
+import IconButton from '@material-ui/core/IconButton';
+import IconDelete from '@material-ui/icons/Delete';
 
 import { showModal as showModalAction } from '../../../redux/actions';
 

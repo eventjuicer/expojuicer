@@ -1,13 +1,18 @@
 import React from 'react'
-import RaisedButton from 'material-ui/RaisedButton';
+import Button from '@material-ui/core/Button';
 import {
     translate,
     refreshView
-} from 'admin-on-rest';
-import {Cart, Check} from 'mdi-material-ui'
-import SelectField from 'material-ui/SelectField'; 
+} from 'react-admin';
+
+ 
+import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
+import Check from '@material-ui/icons/Check'
+
+
+import Select from '@material-ui/core/Select'; 
 //https://v0.material-ui.com/#/components/select-field
-import MenuItem from 'material-ui/MenuItem'; 
+import MenuItem from '@material-ui/core/MenuItem'; 
 
 import {connect} from 'react-redux'
 import compose from 'recompose/compose'
@@ -28,7 +33,7 @@ class QuantityBox extends React.Component {
         const {itemsCount} = this.state;
 
         return (
-            <SelectField
+            <Select
             floatingLabelText={translate('common.actions.quantity')}
             value={itemsCount}
             onChange={this.handleChange}
@@ -40,7 +45,7 @@ class QuantityBox extends React.Component {
                 primaryText={`${item} ${translate('common.sales.pcs')}`}
               />
             ))}
-          </SelectField>
+          </Select>
         )
 
     }
@@ -100,11 +105,11 @@ class QuantityBox extends React.Component {
                 { this.renderTotal() } {` `} {translate('common.sales.net')}
             </div>
             <div style={{marginTop: 20}}>
-                <RaisedButton
+                <Button
                 primary
                 disabled={itemsCount > 0 ? false : true}
                 label={translate(`common.actions.buy`)}
-                icon={<Cart />}
+                icon={<AddShoppingCartIcon />}
                 onClick={this.handleBuy}
                 />
             </div>

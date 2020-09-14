@@ -3,13 +3,10 @@ import {
   Edit,
   TabbedForm,
   FormTab,
-  TextInput,
-  LongTextInput
-} from 'admin-on-rest';
+  TextInput
+} from 'react-admin';
 
 import FullNameField from '../../fields/FullNameField';
-
-//import RichTextInput from 'aor-rich-text-input';
 
 const ViewTitle = ({ record }) =>
   record ? <FullNameField record={record} size={32} /> : null;
@@ -31,7 +28,7 @@ const ViewEdit = props => (
           style={{ display: 'inline-block', marginLeft: 32 }}
         />
 
-        <LongTextInput source="data.template" style={{ maxWidth: 544 }} />
+        <TextInput multiline source="data.template" style={{ maxWidth: 544 }} />
       </FormTab>
     </TabbedForm>
   </Edit>

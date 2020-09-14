@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { translate } from 'admin-on-rest';
+import { translate } from 'react-admin';
 import compose from 'recompose/compose';
-import Dialog from 'material-ui/Dialog';
-import FlatButton from 'material-ui/FlatButton';
+import Dialog from '@material-ui/core/Dialog';
+import Button from '@material-ui/core/Button';
 import get from 'lodash/get';
 
 import { closeModal as closeModalAction } from '../redux/actions';
@@ -30,7 +30,7 @@ const Modal = ({ modal, closeModal, translate }) => {
       title={get(modal, 'title', 'Info')}
       actions={[
         ...buttons,
-        [<FlatButton label={translate("aor.action.close")} onClick={closeModal} />]
+        [<Button label={translate("aor.action.close")} onClick={closeModal} />]
       ]}
       modal={false}
       open={modal ? true : false}

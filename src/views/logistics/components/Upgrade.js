@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {translate} from 'admin-on-rest';
+import {translate} from 'react-admin';
 
 
 
-import Divider from 'material-ui/Divider';
+import Divider from '@material-ui/core/Divider';
 
 
 import * as Typo from '../../../components/Typography';

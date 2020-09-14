@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {translate} from 'admin-on-rest';
+import {translate} from 'react-admin';
 
 const Title = ({ defaultTitle, record, title, subtitle, translate }) => {
     // if (!title) {

@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Notification } from 'admin-on-rest';
+import { Notification } from 'react-admin';
 
-import { Card } from 'material-ui/Card';
-import Avatar from 'material-ui/Avatar';
-import LockIcon from 'material-ui/svg-icons/action/lock-outline';
+import Card  from '@material-ui/core/Card';
+import Avatar from '@material-ui/core/Avatar';
+import LockIcon from '@material-ui/icons/LockOutlined';
 
 
 //import LoginByPassword from './LoginByPassword';

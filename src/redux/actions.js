@@ -9,7 +9,7 @@ import {
   PURCHASE_UPDATE
 } from './types';
 
-import { CREATE, UPDATE } from 'admin-on-rest';
+import { CREATE, UPDATE } from 'react-admin';
 
 export const purchaseCreate = (data, basePath) => ({
     type: PURCHASE_CREATE,
@@ -63,4 +63,4 @@ export const setResponseLimit = (resource, limit) => ({
 });
 
 
-//https://github.com/marmelab/admin-on-rest/blob/c15559c266d449ffc4e39563971822f2f9563bf7/src/actions/dataActions.js
+//https://github.com/marmelab/react-admin/blob/c15559c266d449ffc4e39563971822f2f9563bf7/src/actions/dataActions.js

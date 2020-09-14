@@ -1,8 +1,9 @@
 import React from 'react';
 import styles from '../styles/typography';
-import {translate} from 'admin-on-rest'
-import { Card, CardTitle } from 'material-ui/Card';
+import {translate} from 'react-admin'
 
+import Card from '@material-ui/core/Card'
+import Typography from '@material-ui/core/Typography'
 
 
 export const Page = ({children,label}) => (
@@ -10,7 +11,7 @@ export const Page = ({children,label}) => (
 )
 
 const _PageTitle = ({translate,label}) => (
-  <CardTitle title={translate(label)} />
+  <Typography>{translate(label)}</Typography>
 )
 
 export const PageTitle = translate(_PageTitle)

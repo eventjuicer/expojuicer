@@ -1,11 +1,11 @@
 import React from 'react';
-import { CardActions } from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
-import IconRefresh from 'material-ui/svg-icons/navigation/refresh';
-import IconDownload from 'material-ui/svg-icons/file/file-download';
-import {translate} from 'admin-on-rest';
+import CardActions  from '@material-ui/core/CardActions';
+import Button from '@material-ui/core/Button';
+import IconRefresh from '@material-ui/icons/Refresh';
+import IconDownload from '@material-ui/icons/GetApp';
+import {translate} from 'react-admin';
 
-//import { ListButton } from 'admin-on-rest';
+//import { ListButton } from 'react-admin';
 import {getToken} from '../../helpers';
 
 const style = {
@@ -34,9 +34,9 @@ const Actions = ({
         context: 'button'
       })}
 
-    <FlatButton primary href={`https://api.eventjuicer.com/v1/restricted/scans?download=1&x-token=${ getToken() }`} label = {translate("aor.action.export")} icon={<IconDownload />} />
+    <Button primary href={`https://api.eventjuicer.com/v1/restricted/scans?download=1&x-token=${ getToken() }`} label = {translate("aor.action.export")} icon={<IconDownload />} />
 
-    <FlatButton
+    <Button
       primary
       label={translate("aor.action.refresh")}
       onClick={refresh}

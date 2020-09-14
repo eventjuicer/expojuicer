@@ -5,12 +5,11 @@ import {
   Edit,
   SimpleForm,
   TextInput,
-  LongTextInput,
   ReferenceArrayInput,
   SelectArrayInput
 
 
- } from 'admin-on-rest';
+ } from 'react-admin';
 
 import {validate as validateContact} from "./validation";
 
@@ -54,8 +53,8 @@ const ViewEdit = props => (
          <SelectArrayInput optionText="name" />
       </ReferenceArrayInput>
 
-   <LongTextInput
-
+   <TextInput
+          multiline
           source="comment"
           style={{ maxWidth: 544 }}
         />

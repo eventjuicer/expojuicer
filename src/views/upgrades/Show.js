@@ -5,7 +5,7 @@ import {
   Datagrid,
   DateField,
   ReferenceManyField
-} from 'admin-on-rest';
+} from 'react-admin';
 
 import ShowTitle from './ShowTitle'
 import ShowActions from './ShowActions';

@@ -1,20 +1,15 @@
 
-import Provider from 'material-ui/styles/MuiThemeProvider';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import Provider from '@material-ui/core/styles/MuiThemeProvider';
+import {createMuiTheme} from '@material-ui/core/styles';
 import _get from 'lodash/get'
 
 import {
-  red100,
-  red500,
-  red700,
-  grey200,
-  grey300,
-  grey500,
-  grey700
+  red,
+  grey
 
-} from 'material-ui/styles/colors';
+} from '@material-ui/core/colors';
 
-//https://github.com/mui-org/material-ui/blob/master/src/styles/getMuiTheme.js
+//https://github.com/mui-org/@material-ui/core/blob/master/src/styles/getMuiTheme.js
 
 const appTheme = `${process.env.REACT_APP_THEME}`;
 
@@ -27,11 +22,11 @@ const customThemes = {
       fontFamily: "'Lato', 'Helvetica', sans-serif",
       palette: {
         primary1Color: '#000000', /*table alternate rows!*/
-        primary2Color: grey300,
-        primary3Color: grey300,
-        accent1Color: red500,
-        accent2Color: grey700, /*pagination + table alt rows onHover  */
-        accent3Color: grey700, /*table column names */
+        primary2Color: grey[300],
+        primary3Color: grey[300],
+        accent1Color: red[500],
+        accent2Color: grey[700], /*pagination + table alt rows onHover  */
+        accent3Color: grey[700], /*table column names */
         // textColor: darkBlack,
         // alternateTextColor: white,
         // canvasColor: white,
@@ -48,8 +43,8 @@ const customThemes = {
     },
 
     tableRow: {
-       hoverColor: grey300,
-       stripeColor: grey200,
+       hoverColor: grey[300],
+       stripeColor: grey[200],
        // selectedColor: palette.borderColor,
        // textColor: palette.textColor,
        // borderColor: palette.borderColor,
@@ -67,10 +62,7 @@ const customThemes = {
         // titleColor: darkWhite,
         // subtitleColor: lightWhite,
       },
-      cardText: {
-        // textColor: palette.textColor,
-      },
-
+ 
      flatButton: {
         // color: transparent,
         // buttonFilterColor: '#999999',
@@ -100,9 +92,9 @@ const customThemes = {
     },
 
     tabs: {
-        backgroundColor: grey200,
-        textColor: grey500,
-        selectedTextColor: red700,
+        backgroundColor: grey[200],
+        textColor: grey[500],
+        selectedTextColor: red[700],
     },
 
     // card: {
@@ -116,10 +108,7 @@ const customThemes = {
     //    titleColor: darkWhite,
     //    subtitleColor: lightWhite,
     //  },
-    //  cardText: {
-    //    textColor: palette.textColor,
-    //  },
-
+ 
 
   },
 
@@ -130,11 +119,11 @@ const customThemes = {
       fontFamily: "'Lato', 'Helvetica', sans-serif",
       palette: {
         // primary1Color: grey200, /*table alternate rows!*/
-        primary2Color: grey300,
-        primary3Color: grey300,
-        accent1Color: red500,
-        accent2Color: grey700, /*pagination + table alt rows onHover  */
-        accent3Color: grey700, /*table column names */
+        primary2Color: grey[300],
+        primary3Color: grey[300],
+        accent1Color: red[500],
+        accent2Color: grey[700], /*pagination + table alt rows onHover  */
+        accent3Color: grey[700], /*table column names */
         // textColor: darkBlack,
         // alternateTextColor: white,
         // canvasColor: white,
@@ -145,13 +134,13 @@ const customThemes = {
         // shadowColor: fullBlack,
       },
     appBar: {
-      color: red500,
+      color: red[500],
       titleFontWeight: 300,
     },
 
     tableRow: {
-       hoverColor: grey300,
-       stripeColor: grey200,
+       hoverColor: grey[300],
+       stripeColor: grey[200],
        // selectedColor: palette.borderColor,
        // textColor: palette.textColor,
        // borderColor: palette.borderColor,
@@ -169,16 +158,14 @@ const customThemes = {
         // titleColor: darkWhite,
         // subtitleColor: lightWhite,
       },
-      cardText: {
-        // textColor: palette.textColor,
-      },
+  
 
      flatButton: {
         // color: transparent,
         // buttonFilterColor: '#999999',
         // disabledTextColor: fade(palette.textColor, 0.3),
-       textColor: red700,
-        primaryTextColor: red700,
+       textColor: red[700],
+        primaryTextColor: red[700],
     //    secondaryTextColor: palette.accent1Color,
         // fontSize: typography.fontStyleButtonFontSize,
         // fontWeight: typography.fontWeightMedium,
@@ -187,7 +174,7 @@ const customThemes = {
     raisedButton: {
         // color: palette.alternateTextColor,
         // textColor: palette.textColor,
-        primaryColor: red700,
+        primaryColor: red[700],
         // primaryTextColor: palette.alternateTextColor,
         // secondaryColor: palette.accent1Color,
         // secondaryTextColor: palette.alternateTextColor,
@@ -198,9 +185,9 @@ const customThemes = {
     },
 
     tabs: {
-        backgroundColor: grey200,
-        textColor: grey500,
-        selectedTextColor: red700,
+        backgroundColor: grey[200],
+        textColor: grey[500],
+        selectedTextColor: red[700],
     },
 
     // card: {
@@ -214,9 +201,7 @@ const customThemes = {
     //    titleColor: darkWhite,
     //    subtitleColor: lightWhite,
     //  },
-    //  cardText: {
-    //    textColor: palette.textColor,
-    //  },
+ 
 
 
   }
@@ -224,7 +209,7 @@ const customThemes = {
 };
 
 
-export const getTheme = () => getMuiTheme(appTheme && appTheme in customThemes ? customThemes[appTheme] : customThemes.red)
+export const getTheme = () => createMuiTheme(appTheme && appTheme in customThemes ? customThemes[appTheme] : customThemes.red)
 
 export const getColorsFromTheme = () => _get(getTheme(), "palette", {})
 

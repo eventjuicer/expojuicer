@@ -4,7 +4,7 @@ import {
   CRUD_CREATE_SUCCESS,
   CRUD_UPDATE_SUCCESS,
   showNotification
-} from 'admin-on-rest';
+} from 'react-admin';
 import { push } from 'react-router-redux';
 import get from 'lodash/get'
 

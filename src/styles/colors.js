@@ -1,13 +1,20 @@
 import {
-  cyan50 as colorBg,
-  cyan100 as colorHeader,
-  grey600 as colorSubheader,
-  red300 as failure,
-  green300 as success,
-  grey100 as disabledBg,
-  grey500 as disabledHeader,
-  grey700 as disabledSubheader
-} from 'material-ui/styles/colors';
+  cyan, 
+  grey, 
+  red,
+  green
+} from '@material-ui/core/colors';
+
+
+const colorBg = cyan[50]
+const colorHeader = cyan[100]
+const colorSubheader = grey[600]
+const failure = red[300]
+const success = green[300]
+const disabledBg = grey[100]
+const disabledHeader = grey[500]
+const disabledSubheader = grey[700]
+
 
 export {
   colorBg,

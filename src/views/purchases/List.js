@@ -6,7 +6,7 @@ import {
   Filter, 
   DateField, 
   TextInput 
-} from 'admin-on-rest';
+} from 'react-admin';
 
 import ModifyPurchaseField from '../upgrades/ModifyPurchaseField'
 import AmountField from '../upgrades/AmountField'

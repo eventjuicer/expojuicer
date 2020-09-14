@@ -1,15 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Card, CardText } from 'material-ui/Card';
-import RaisedButton from 'material-ui/RaisedButton';
+
+import Card from '@material-ui/core/Card';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+
+
 import {
   translate,
   changeLocale as changeLocaleAction,
-  ViewTitle
-} from 'admin-on-rest';
+  Title,
+  usePermissions
+} from 'react-admin';
 
 import { withRouter } from 'react-router-dom';
-import { Restricted } from 'admin-on-rest';
+ 
 import compose from 'recompose/compose';
 
 import { changeTheme as changeThemeAction } from '../../redux/actions';
@@ -27,29 +32,36 @@ const Configuration = ({
   changeLocale,
   translate,
   location
-}) => (
-  <Restricted authParams={{ foo: 'bar' }} location={location}>
+}) => {
+
+
+  const { loaded, permissions } = usePermissions();
+
+
+  return (
     <Card>
-      <ViewTitle title={translate('pos.configuration')} />
+    <Title title={translate('pos.configuration')} />
 
-      <CardText>
-        <div style={styles.label}>{translate('pos.language')}</div>
+    <Typography>
+      <div style={styles.label}>{translate('pos.language')}</div>
 
-        {
-          locales.map(newLocale => <RaisedButton
-            key={newLocale}
-            style={styles.button}
-            label={newLocale}
-            primary={locale === newLocale}
-            onClick={() => changeLocale(newLocale)}
-          />)
-        }
+      {
+        locales.map(newLocale => <Button
+          key={newLocale}
+          style={styles.button}
+          label={newLocale}
+          primary={locale === newLocale}
+          onClick={() => changeLocale(newLocale)}
+        />)
+      }
 
-      
-      </CardText>
-    </Card>
-  </Restricted>
-);
+    
+    </Typography>
+  </Card>
+  )
+
+}
+
 
 Configuration.defaultProps = {
   locales : `${process.env.REACT_APP_LOCALES}`.split(",")

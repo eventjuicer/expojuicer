@@ -1,8 +1,13 @@
 import React from 'react';
 
-import { translate } from 'admin-on-rest';
-import Avatar from 'material-ui/Avatar';
-import { Card, CardHeader, CardTitle } from 'material-ui/Card';
+import { translate } from 'react-admin';
+import Avatar from '@material-ui/core/Avatar';
+
+import Card from '@material-ui/core/Card';
+import CardHeader from '@material-ui/core/CardHeader';
+import Typography from '@material-ui/core/Typography';
+
+
 import {resolveAssetPath} from '../helpers'
 
 const styles = {
@@ -26,10 +31,11 @@ const Contact = ({translate, avatar, phone, email}) => (
            style={{padding: 12}}
 
            title={
-              <CardTitle
-                title={translate("pos.support.title")}
-                subtitle={translate("pos.support.description")}
-              />
+             <div>
+               <Typography>{translate("pos.support.title")}</Typography>
+               <Typography>{translate("pos.support.description")}</Typography>
+             </div>
+            
            }
 
            subtitle={<CardHeader title={
@@ -39,17 +45,7 @@ const Contact = ({translate, avatar, phone, email}) => (
            avatar={<Avatar size={80}  src={resolveAssetPath(avatar)} style={styles.avatar} />}
          />
 
-
-         {/* <CardText >
-           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-           Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
-           Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
-           Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
-         </CardText> */}
-         {/* <CardActions>
-           <FlatButton label="Expand" onClick={this.handleExpand} />
-           <FlatButton label="Reduce" onClick={this.handleReduce} />
-         </CardActions> */}
+ 
        </Card>
 
 

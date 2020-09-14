@@ -1,8 +1,8 @@
 import React from 'react';
-import { CardActions } from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
-import NavigationRefresh from 'material-ui/svg-icons/navigation/refresh';
-import { ListButton, EditButton, DeleteButton } from 'admin-on-rest';
+import CardActions from '@material-ui/core/CardActions';
+import Button from '@material-ui/core/Button';
+import NavigationRefresh from '@material-ui/icons/navigation/refresh';
+import { ListButton, EditButton, DeleteButton } from 'react-admin';
 
 const styles = {
   zIndex: 2,
@@ -12,9 +12,9 @@ const styles = {
 
 const InviteListActions = ({ basePath, data, refresh }) => (
   <CardActions style={styles}>
-    <FlatButton basePath="/contacts" primary label="Contacts" />
+    <Button basePath="/contacts" primary label="Contacts" />
 
-    <FlatButton
+    <Button
       primary
       label="Refresh"
       onClick={refresh}
@@ -25,7 +25,7 @@ const InviteListActions = ({ basePath, data, refresh }) => (
         <EditButton basePath={basePath} record={data} />
   <DeleteButton basePath={basePath} record={data} />
       <EditButton basePath={basePath} record={data} />
-  <FlatButton primary label="Custom Action" onClick={customAction} />
+  <Button primary label="Custom Action" onClick={customAction} />
       */}
   </CardActions>
 );

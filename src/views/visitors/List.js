@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, Datagrid, Filter, TextField, TextInput } from 'admin-on-rest';
+import { List, Datagrid, Filter, TextField, TextInput } from 'react-admin';
 
 import InviteButton from './components/InviteButton';
 

@@ -1,12 +1,14 @@
+
 import React from 'react';
-import { Card, CardText } from 'material-ui/Card';
-import { ViewTitle } from 'admin-on-rest/lib/mui';
+import Card  from '@material-ui/core/Card';
+ 
+import { Title } from 'react-admin';
 
 export default () => (
   <Card>
-    <ViewTitle title="Not Found" />
-    <CardText>
+    <Title title="Not Found" />
+    <p>
       <h1>Checking permissions!</h1>
-    </CardText>
+    </p>
   </Card>
 );

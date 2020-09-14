@@ -1,4 +1,4 @@
-import {translate} from 'admin-on-rest';
+import {translate} from 'react-admin';
 
 export const validate = (values) => {
 

@@ -5,12 +5,12 @@ import {
   getResources,
   translate,
   DashboardMenuItem,
-  WithPermission
-} from 'admin-on-rest';
+  usePermissions
+} from 'react-admin';
 import compose from 'recompose/compose';
 
-import Subheader from 'material-ui/Subheader';
-//import Divider from 'material-ui/Divider';
+import Typography from '@material-ui/core/Typography';
+//import Divider from '@material-ui/core/Divider';
 
 
 
@@ -40,15 +40,23 @@ const resourcesWithListAccess = (resources) => resources.filter(res => res.list)
  
 const Menu = ({ resources, onMenuTap, logout, translate }) => {
 
+
+  const { loaded, permissions } = usePermissions();
+
+  if(!loaded){
+    return <div>checking permissions...</div>
+  }
+
   return (
+
 
     <div style={{marginTop: 20}}>
 
       <DashboardMenuItem onTouchTap={onMenuTap} />
-  
+{/*   
       {
         menuItems.map((section) => <WithPermission key={section.name} value={getSectionItemNames(section)} resolve={({permissions, value}) => hasAccessTo(permissions, value)}>
-        <Subheader>{translate(`menu.sections.${section.name}`)}</Subheader>{
+        <Typography>{translate(`menu.sections.${section.name}`)}</Typography>{
           section.items.map((item) => <WithPermission key={`${section.name}_${item.name}`} value={item.name} resolve={({permissions, value}) => hasAccessTo(permissions, value)}>
           <MenuItemLink 
             to={`/${item.name}`}
@@ -56,7 +64,7 @@ const Menu = ({ resources, onMenuTap, logout, translate }) => {
             onClick={onMenuTap}
             leftIcon={item.icon}
           /></WithPermission>)}</WithPermission>)
-      }
+      } */}
   
       {logout}
   

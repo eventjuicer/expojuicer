@@ -1,7 +1,7 @@
 import React from 'react'
 import {
     translate
-} from 'admin-on-rest';
+} from 'react-admin';
 
 const ConfirmationBox = ({translate, data}) => ( <div>{translate("common.thankyou")}</div>)
 

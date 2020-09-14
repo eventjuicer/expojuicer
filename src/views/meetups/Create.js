@@ -2,13 +2,12 @@ import React from 'react';
 import {
   Create,
   SimpleForm,
-  LongTextInput,
-  DisabledInput,
   TextInput,
+  NumberInput,
   required,
   email,
   minLength,
-} from 'admin-on-rest';
+} from 'react-admin';
 
 import get from 'lodash/get';
 import qs from 'query-string';
@@ -18,20 +17,21 @@ import { getUserFullName, getUserData } from '../../helpers';
 
 
 
-
 const ViewCreate = props => (
   <Create title="aor.page.meeting_request" {...props}>
     <SimpleForm redirect="list" submitOnEnter={false} validate={validate}>
-      <DisabledInput
+      <NumberInput
+        disabled={true}
         source="participant_id"
-        defaultValue={get(qs.parse(props.location.search), 'participant_id', 0)}
+        initialValue={get(qs.parse(props.location.search), 'participant_id', 0)}
       />
 
-      <LongTextInput
-      source="message"
-      validate={[basicValidation]}
-      style={{ maxWidth: 700 }}
-      defaultValue={getUserData('company.profile.invitation_template')}
+      <TextInput
+        multiline
+        source="message"
+        validate={[basicValidation]}
+        style={{ maxWidth: 700 }}
+        initialValue={getUserData('company.profile.invitation_template')}
       />
 
       <TextInput
@@ -39,7 +39,7 @@ const ViewCreate = props => (
         validate={[basicValidation]}
         options={{ fullWidth: true }}
         style={{ width: 544 }}
-        defaultValue={getUserFullName()}
+        initialValue={getUserFullName()}
       />
 
       <TextInput
@@ -48,7 +48,7 @@ const ViewCreate = props => (
         validate={[basicValidationEmail]}
         options={{ fullWidth: true }}
         style={{ width: 544 }}
-        defaultValue={getUserData('email')}
+        initialValue={getUserData('email')}
       />
     </SimpleForm>
   </Create>

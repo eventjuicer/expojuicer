@@ -7,7 +7,7 @@ import {
   TextField,
   //  TextInput,
   SelectInput
-} from 'admin-on-rest';
+} from 'react-admin';
 
 import ListActions from './ListActions';
 

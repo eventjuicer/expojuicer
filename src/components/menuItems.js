@@ -1,23 +1,22 @@
 import React from 'react';
 
 
-//import SettingsIcon from 'material-ui/svg-icons/action/settings';
-import ContentInbox from 'material-ui/svg-icons/content/inbox';
-import IconStatus from 'material-ui/svg-icons/action/today';
-import IconTrend from 'material-ui/svg-icons/action/trending-up';
-import IconShare from 'material-ui/svg-icons/av/volume-up';
-import IconRewards from 'material-ui/svg-icons/action/favorite';
-import IconImports from 'material-ui/svg-icons/communication/contact-mail';
-import IconLanguage from 'material-ui/svg-icons/action/language';
-import IconSetting from 'material-ui/svg-icons/action/settings';
-import IconBuild from 'material-ui/svg-icons/action/build';
-import IconCart from 'material-ui/svg-icons/action/shopping-cart';
+//import SettingsIcon from '@material-ui/icons/settings';
+import ContentInbox from '@material-ui/icons/Inbox';
+import IconStatus from '@material-ui/icons/Today';
+import IconTrend from '@material-ui/icons/TrendingUp';
+import IconShare from '@material-ui/icons/VolumeUp';
+import IconRewards from '@material-ui/icons/Favorite';
+import IconImports from '@material-ui/icons/ContactMail';
+import IconLanguage from '@material-ui/icons/Language';
+import IconSetting from '@material-ui/icons/Settings';
+import IconBuild from '@material-ui/icons/Build';
+import IconCart from '@material-ui/icons/ShoppingCart';
+import IconParty from '@material-ui/icons/LocalBar';
+import IconPeople from '@material-ui/icons/People';
+import IconLogistics from '@material-ui/icons/Redeem';
 
-import {
-  PackageVariantClosed as IconLogistics,
-  AccountMultiple as IconPeople,
-  GlassWine as IconParty
-} from 'mdi-material-ui'
+ 
 
 export const getSectionItemNames = (section) => section.items.map(item => item.name)
 

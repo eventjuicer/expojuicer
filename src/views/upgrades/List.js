@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   List
-} from 'admin-on-rest';
+} from 'react-admin';
 
 import ListActions from './ShowActions';
 import CustomIterator from './CustomIterator'

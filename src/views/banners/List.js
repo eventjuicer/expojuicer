@@ -8,7 +8,7 @@ import {
   //  Filter,
   //  TextField,
   //  TextInput
-} from 'admin-on-rest';
+} from 'react-admin';
 
 import Creatives from './Creatives';
 

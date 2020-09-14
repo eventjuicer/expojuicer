@@ -1,12 +1,16 @@
 import React from 'react';
 
-import { translate } from 'admin-on-rest';
+import { translate } from 'react-admin';
 
-import { Card, CardHeader, CardActions, CardTitle } from 'material-ui/Card';
-import IconDownload from 'material-ui/svg-icons/file/file-download';
-import IconZip from 'material-ui/svg-icons/content/archive';
-import PrimaryButton from 'material-ui/RaisedButton';
-import Button from 'material-ui/FlatButton';
+import Card from '@material-ui/core/Card';
+import CardHeader from '@material-ui/core/CardHeader';
+import CardActions from '@material-ui/core/CardActions';
+import Typography from '@material-ui/core/Typography';
+
+
+import IconDownload from '@material-ui/icons/GetApp';
+import IconZip from '@material-ui/icons/Archive';
+import Button from '@material-ui/core/Button';
 import { httpClient } from '../../../api/restClient';
 import Iframe from '../../../components/Iframe';
 import { getUserId } from '../../../helpers';
@@ -61,10 +65,13 @@ class Newsletter extends React.Component {
 
             style={{padding: 0}}
             title={
-              <CardTitle
-                title={translate(`resources.creatives.newsletters.${creative.name}.title`)}
-                subtitle={translate(`resources.creatives.newsletters.${creative.name}.description`)}
-              />
+
+              <div>
+                <Typography>{translate(`resources.creatives.newsletters.${creative.name}.title`)}</Typography>
+                <Typography>{translate(`resources.creatives.newsletters.${creative.name}.description`)}</Typography>
+              </div>
+
+          
             }
           //  subtitle={  <CardHeader
               //style={{ backgroundColor: colorHeader }}
@@ -81,7 +88,7 @@ class Newsletter extends React.Component {
               <Iframe src={`data:text/html;base64,${newsletter}`} />
 
               <CardActions>
-                <PrimaryButton
+                <Button
                   primary={true}
                   download={true}
                   target="_blank"

@@ -1,8 +1,8 @@
 //import 'babel-polyfill';
 import React from 'react';
-import { Admin, Resource, Delete, fetchUtils } from 'admin-on-rest';
+import { Admin, Resource, Delete, fetchUtils } from 'react-admin';
 
-
+import polyglotI18nProvider from 'ra-i18n-polyglot';
 import AppBarTitle from './components/AppBarTitle';
 import Logins from './components/Logins';
 import Logout from './components/Logout';
@@ -102,6 +102,9 @@ import { ViewList as ScanList, ViewEdit as ScanEdit } from './views/scans';
 import { ViewList as RankingList } from './views/ranking';
 
 
+const i18nProvider = polyglotI18nProvider((locale) => translations[locale], 'pl');
+
+
 class App extends React.Component {
 
   // state = {
@@ -129,125 +132,142 @@ class App extends React.Component {
     //   )
     // }
 
+
+    return   ( <Admin
+    dataProvider={restClient}
+    authProvider={authClient}
+    i18nProvider={i18nProvider}
+  ></Admin>
+)
+
     return (
       <Admin
-        catchAll={NotFound}
-        title={<AppBarTitle />}
-        restClient={restClient}
-        customReducers={reducers}
-        customSagas={sagas}
-        customRoutes={customRoutes}
-        authClient={authClient}
-        dashboard={Dashboard}
-        loginPage={Logins}
-        logoutButton={Logout}
-        menu={Menu}
-        locale={ getLocale() }
-        messages={ translations }
-        theme={ getTheme() }
+
+         dataProvider={restClient}
+         authProvider={authClient}
+         i18nProvider={i18nProvider}
+
+
+       // catchAll={NotFound}
+        // title={<AppBarTitle />}
+      
+        // customReducers={reducers}
+        // customSagas={sagas}
+        // customRoutes={customRoutes}
+     
+        // dashboard={Dashboard}
+        // loginPage={Logins}
+        // logoutButton={Logout}
+        // menu={Menu}
+        // locale={ getLocale() }
+        // messages={ translations }
+        // theme={ getTheme() }
       >
        {(permissions) => [
 
 
 
-<Resource name="companydata" list={CompanyDataList} edit={CompanyDataEdit} />,
+// <Resource name="companydata" list={CompanyDataList} edit={CompanyDataEdit} />,
 
-<Resource name="purchases" list={PurchaseList} />,
+// <Resource name="purchases" list={PurchaseList} />,
 
-<Resource
-  name="imports"
-  list={hasAccessTo(permissions, "imports", "list") ?  ImportList : null}
-  edit={hasAccessTo(permissions, "imports", "edit") ? ImportEdit : null}
-  create={hasAccessTo(permissions, "imports", "create") ? ImportCreate : null}
-/>,
+// <Resource
+//   name="imports"
+//   list={hasAccessTo(permissions, "imports", "list") ?  ImportList : null}
+//   edit={hasAccessTo(permissions, "imports", "edit") ? ImportEdit : null}
+//   create={hasAccessTo(permissions, "imports", "create") ? ImportCreate : null}
+// />,
 
-<Resource
-  name="meetups"
-  list={hasAccessTo(permissions, "meetups", "list") ? MeetupList : null}
-  edit={hasAccessTo(permissions, "meetups", "edit") ? MeetupEdit  : null}
-  create={hasAccessTo(permissions, "meetups", "create") ? MeetupCreate  : null}
-  remove={hasAccessTo(permissions, "meetups", "remove") ? Delete  : null}
-/>,
+// <Resource
+//   name="meetups"
+//   list={hasAccessTo(permissions, "meetups", "list") ? MeetupList : null}
+//   edit={hasAccessTo(permissions, "meetups", "edit") ? MeetupEdit  : null}
+//   create={hasAccessTo(permissions, "meetups", "create") ? MeetupCreate  : null}
+//   remove={hasAccessTo(permissions, "meetups", "remove") ? Delete  : null}
+// />,
 
-<Resource
-  name="representatives"
-  list={hasAccessTo(permissions, "representatives", "list") ? RepresentativeList : null}
-  edit={hasAccessTo(permissions, "representatives", "edit") ? RepresentativeEdit : null}
-  create={hasAccessTo(permissions, "representatives", "create") ? RepresentativeCreate : null}
-  remove={hasAccessTo(permissions, "representatives", "delete") ? Delete : null}
-/>,
+// <Resource
+//   name="representatives"
+//   list={hasAccessTo(permissions, "representatives", "list") ? RepresentativeList : null}
+//   edit={hasAccessTo(permissions, "representatives", "edit") ? RepresentativeEdit : null}
+//   create={hasAccessTo(permissions, "representatives", "create") ? RepresentativeCreate : null}
+//   remove={hasAccessTo(permissions, "representatives", "delete") ? Delete : null}
+// />,
 
-<Resource
-  name="party"
-  list={hasAccessTo(permissions, "party", "list") ? PartyList : null}
-  edit={hasAccessTo(permissions, "party", "edit") ? PartyEdit : null}
-  create={hasAccessTo(permissions, "party", "create") ? PartyCreate : null}
-  remove={hasAccessTo(permissions, "party", "delete") ? Delete : null}
-/>,
-
-
-<Resource
-  name="upgrades"
-  list={hasAccessTo(permissions, "upgrades", "list") ? UpgradeList : null}
-  show={hasAccessTo(permissions, "upgrades", "edit") ? UpgradeShow : null}
-/>,
-
-<Resource
-  name="contactlists"
-  list={hasAccessTo(permissions, "contactlists", "list") ? ContactlistList : null}
-  edit={hasAccessTo(permissions, "contactlists", "edit") ? ContactlistEdit : null}
-  create={hasAccessTo(permissions, "contactlists", "create") ? ContactlistCreate : null}
-/>,
-
-<Resource 
-  name="visitors" 
-  list={hasAccessTo(permissions, "visitors", "list") ? VisitorList : null} 
-/>,
+// <Resource
+//   name="party"
+//   list={hasAccessTo(permissions, "party", "list") ? PartyList : null}
+//   edit={hasAccessTo(permissions, "party", "edit") ? PartyEdit : null}
+//   create={hasAccessTo(permissions, "party", "create") ? PartyCreate : null}
+//   remove={hasAccessTo(permissions, "party", "delete") ? Delete : null}
+// />,
 
 
-<Resource
-  name="campaigns"
-  list={hasAccessTo(permissions, "campaigns", "list") ? CampaignList : null}
-  edit={hasAccessTo(permissions, "campaigns", "edit") ? CampaignEdit : null}
-  create={hasAccessTo(permissions, "campaigns", "create") ? CampaignCreate : null}
-/>,
+// <Resource
+//   name="upgrades"
+//   list={hasAccessTo(permissions, "upgrades", "list") ? UpgradeList : null}
+//   show={hasAccessTo(permissions, "upgrades", "edit") ? UpgradeShow : null}
+// />,
 
-<Resource 
-  name="ranking" 
-  list={hasAccessTo(permissions, "ranking", "list") ? RankingList : null} 
-/>,
+// <Resource
+//   name="contactlists"
+//   list={hasAccessTo(permissions, "contactlists", "list") ? ContactlistList : null}
+//   edit={hasAccessTo(permissions, "contactlists", "edit") ? ContactlistEdit : null}
+//   create={hasAccessTo(permissions, "contactlists", "create") ? ContactlistCreate : null}
+// />,
 
-<Resource 
-  name="contacts" 
-  list={hasAccessTo(permissions, "contacts", "list") ? ContactList : null} 
-  edit={hasAccessTo(permissions, "contacts", "edit") ? ContactEdit : null} 
-/>,
+// <Resource 
+//   name="visitors" 
+//   list={hasAccessTo(permissions, "visitors", "list") ? VisitorList : null} 
+// />,
 
-<Resource 
-  name="creatives" 
-  list={hasAccessTo(permissions, "creatives", "list") ? CreativeList : null} 
-  edit={hasAccessTo(permissions, "creatives", "edit") ? CreativeEdit : null} 
-/>,
 
-<Resource 
-  name="newsletters" 
-  list={hasAccessTo(permissions, "newsletters", "list") ? NewsletterList : null} 
-/>,
+// <Resource
+//   name="campaigns"
+//   list={hasAccessTo(permissions, "campaigns", "list") ? CampaignList : null}
+//   edit={hasAccessTo(permissions, "campaigns", "edit") ? CampaignEdit : null}
+//   create={hasAccessTo(permissions, "campaigns", "create") ? CampaignCreate : null}
+// />,
 
-<Resource 
-  name="banners" 
-  list={hasAccessTo(permissions, "banners", "list") ? BannerList : null}  
-/>,
+// <Resource 
+//   name="ranking" 
+//   list={hasAccessTo(permissions, "ranking", "list") ? RankingList : null} 
+// />,
 
-<Resource
-  name="scans"
-  options={{ label: 'Scans' }}
-  list={hasAccessTo(permissions, "scans", "list") ? ScanList : null}
-  edit={hasAccessTo(permissions, "scans", "edit") ? ScanEdit : null}
-/>,
+// <Resource 
+//   name="contacts" 
+//   list={hasAccessTo(permissions, "contacts", "list") ? ContactList : null} 
+//   edit={hasAccessTo(permissions, "contacts", "edit") ? ContactEdit : null} 
+// />,
 
-<Resource name="tasks" />
-       ]} 
+// <Resource 
+//   name="creatives" 
+//   list={hasAccessTo(permissions, "creatives", "list") ? CreativeList : null} 
+//   edit={hasAccessTo(permissions, "creatives", "edit") ? CreativeEdit : null} 
+// />,
+
+// <Resource 
+//   name="newsletters" 
+//   list={hasAccessTo(permissions, "newsletters", "list") ? NewsletterList : null} 
+// />,
+
+// <Resource 
+//   name="banners" 
+//   list={hasAccessTo(permissions, "banners", "list") ? BannerList : null}  
+// />,
+
+// <Resource
+//   name="scans"
+//   options={{ label: 'Scans' }}
+//   list={hasAccessTo(permissions, "scans", "list") ? ScanList : null}
+//   edit={hasAccessTo(permissions, "scans", "edit") ? ScanEdit : null}
+// />,
+
+// <Resource name="tasks" />
+// 
+
+
+  ]} 
       </Admin>
     );
   }

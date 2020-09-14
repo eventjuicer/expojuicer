@@ -1,7 +1,7 @@
 import React from 'react'
-import {translate, refreshView} from 'admin-on-rest'
-import RaisedButton from 'material-ui/RaisedButton';
-import {Check, Cancel, Pencil} from 'mdi-material-ui';
+import {translate, refreshView} from 'react-admin'
+import Button from '@material-ui/core/Button';
+import {Check, Cancel, Pencil} from '@material-ui/icons';
 
 import {connect} from 'react-redux'
 import compose from 'recompose/compose'
@@ -36,7 +36,7 @@ class ModifyPurchaseField extends React.Component {
 
         const {translate, locale, record} = this.props;
 
-        return  (<RaisedButton
+        return  (<Button
             disabled={this.canBeModified()}
             primary
             label={translate(`common.actions.modify`)}

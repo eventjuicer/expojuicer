@@ -1,11 +1,13 @@
 import React from 'react';
 
-import Approved from 'material-ui/svg-icons/action/thumb-up';
-import Rejected from 'material-ui/svg-icons/action/thumb-down';
-import Waiting from 'material-ui/svg-icons/action/hourglass-empty';
-import Scheduled from 'material-ui/svg-icons/action/hourglass-empty';
+import Approved from '@material-ui/icons/ThumbUp';
+import Rejected from '@material-ui/icons/ThumbDown';
+import Waiting from '@material-ui/icons/HourglassEmpty';
 
 import { status } from './status';
+
+const Scheduled = Waiting;
+
 
 const StatusField = props => {
   const intStatus = status(props.record);

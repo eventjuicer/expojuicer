@@ -2,11 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import compose from 'recompose/compose';
 
-import Paper from 'material-ui/Paper';
+import Paper from '@material-ui/core/Paper';
 
-import { Card, CardTitle, CardText } from 'material-ui/Card';
+import Card from '@material-ui/core/Card'
+import CardHeader from '@material-ui/core/CardHeader'
+ 
 
-import { translate } from 'admin-on-rest';
+import { translate } from 'react-admin';
 
 const styles = {
   container: {
@@ -19,12 +21,11 @@ const NoResults = props =>
   props.specialmessage ? (
     <Paper zDepth={2} style={styles.container}>
       <Card>
-        <CardTitle
+        <CardHeader
           title={props.translate(`${props.specialmessage}.noresults`)}
+          subheader={props.translate(`${props.specialmessage}.noresultsmore`)}
         />
-        <CardText>
-          {props.translate(`${props.specialmessage}.noresultsmore`)}
-        </CardText>
+       
       </Card>
     </Paper>
   ) : null;
