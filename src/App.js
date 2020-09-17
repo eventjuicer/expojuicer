@@ -2,6 +2,7 @@
 import React from 'react';
 import { Admin, Resource, Delete, fetchUtils } from 'react-admin';
 
+
 import polyglotI18nProvider from 'ra-i18n-polyglot';
 import AppBarTitle from './components/AppBarTitle';
 import Logins from './components/Logins';
@@ -10,17 +11,26 @@ import NotFound from './components/NotFound';
 import Menu from './components/Menu';
 import customRoutes from './components/routes';
 
-import authClient from './api/authClient';
-import restClient from './api/restClient';
+import {
+  authClient, 
+  eventjuicerApiClient,
+  addUploadFeature,
+  httpClient
+} from './api';
+
 
 import sagas from './redux/sagas';
 import reducers from './redux/reducers';
 
-import translations from './localise';
+import backupTranslations from './localise';
 import Dashboard from './views/dashboard';
 
 import {getLocale, hasAccessTo} from './helpers'
 import {getTheme} from './styles/muiTheme'
+
+import defaultEnglishTranslations from 'ra-language-english'
+import defaultGermanTranslations from 'ra-language-german'
+import defaultPolishTranslations from 'ra-language-polish'
 
 import {
   ViewList as MeetupList,
@@ -102,72 +112,86 @@ import { ViewList as ScanList, ViewEdit as ScanEdit } from './views/scans';
 import { ViewList as RankingList } from './views/ranking';
 
 
-const i18nProvider = polyglotI18nProvider((locale) => translations[locale], 'pl');
 
 
-class App extends React.Component {
-
-  // state = {
-  //   texts : null
-  // }
-
-  // componentDidMount(){
-    
-  //   const localiseUrl = encodeURIComponent(`https://localise.biz/api/export/all.json?format=multi&pretty&key=${process.env.REACT_APP_LOCALISE}`)
-
-  //   fetchUtils.fetchJson(`https://api.eventjuicer.com/v1/services/no-cors?url=${localiseUrl}`)
-  //   .then(response => response.json)
-  //   .then(texts => this.setState({texts}) )  
-  // }
-
-  render() {
-
-    // const {texts} = this.state;
-
-    // if(!texts){
-    //   return (
-    //     <div className="loader-container">
-    //       <div className="loader">Loading...</div>
-    //     </div>
-    //   )
-    // }
 
 
-    return   ( <Admin
-    dataProvider={restClient}
-    authProvider={authClient}
-    i18nProvider={i18nProvider}
-  ></Admin>
-)
 
-    return (
-      <Admin
 
-         dataProvider={restClient}
-         authProvider={authClient}
-         i18nProvider={i18nProvider}
+
+
+const defaulTranslations = {
+  en: defaultEnglishTranslations,
+  de: defaultGermanTranslations,
+  pl: defaultPolishTranslations
+}
+
+const i18nProvider = polyglotI18nProvider((locale) => {
+
+    return {...defaulTranslations[locale], ...backupTranslations[locale]}
+
+
+    // const localiseUrl = encodeURIComponent(`https://localise.biz/api/export/all.json?format=multi&pretty&key=${process.env.REACT_APP_LOCALISE}`)
+
+    // return fetchUtils.fetchJson(`https://api.eventjuicer.com/v1/services/no-cors?url=${localiseUrl}`)
+    // .then(response => response.json)
+    // .then(translations => translations[locale] )
+    // .catch(error => backupTranslations)
+
+},  getLocale() );
 
 
        // catchAll={NotFound}
-        // title={<AppBarTitle />}
-      
-        // customReducers={reducers}
-        // customSagas={sagas}
-        // customRoutes={customRoutes}
-     
+        // title={<AppBarTitle />}     
         // dashboard={Dashboard}
         // loginPage={Logins}
         // logoutButton={Logout}
         // menu={Menu}
-        // locale={ getLocale() }
-        // messages={ translations }
         // theme={ getTheme() }
-      >
-       {(permissions) => [
+   
+
+const uploadCapableDataProvider = addUploadFeature(
+  eventjuicerApiClient( `${process.env.REACT_APP_API_ENDPOINT}`, httpClient)
+);
 
 
 
-// <Resource name="companydata" list={CompanyDataList} edit={CompanyDataEdit} />,
+const App = (props) => (
+
+  <Admin
+    
+    dataProvider={ uploadCapableDataProvider }
+    authProvider={ authClient }
+    i18nProvider={ i18nProvider }
+
+    //yet to be checked
+    customReducers={reducers}
+    customSagas={sagas}
+    customRoutes={customRoutes}
+
+  >{
+    (permissions) => {
+      
+      // console.log(permissions)
+      
+      return [
+        <Resource name="companydata" list={CompanyDataList} edit={CompanyDataEdit} />
+      ]
+    }
+  }
+  
+
+  
+  </Admin>
+
+)
+
+      
+
+
+
+
+//
 
 // <Resource name="purchases" list={PurchaseList} />,
 
@@ -267,10 +291,6 @@ class App extends React.Component {
 // 
 
 
-  ]} 
-      </Admin>
-    );
-  }
-}
+
 
 export default App;

@@ -1,4 +1,3 @@
-import eventjuicerApiClient from './eventjuicerApiClient';
 import { fetchUtils } from 'react-admin';
 // import get from 'lodash/get';
 import { getToken } from '../helpers';
@@ -14,11 +13,6 @@ const httpClient = (url, options = {}) => {
   return fetchUtils.fetchJson(url, options);
 };
 
-const restClient = eventjuicerApiClient(
-  `${process.env.REACT_APP_API_ENDPOINT}`,
-  httpClient
-);
 
-export { httpClient };
+export default httpClient;
 
-export default restClient;

@@ -51,8 +51,9 @@ checkAuth: () => {
     return localStorage.getItem('token') ? Promise.resolve() : Promise.reject();
 },
 getPermissions: () => {
-    const role = localStorage.getItem('permissions');
-    return role ? Promise.resolve(role) : Promise.reject();
+
+    return checkAccessFor("/?noperms");
+    // return role ? Promise.resolve(role) : Promise.reject();
 }
 
 

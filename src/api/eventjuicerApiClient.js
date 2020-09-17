@@ -11,6 +11,9 @@ import {
 
 import {transform} from '../helpers';
 
+
+
+
 /**
  * Maps react-admin queries to a json-server powered REST API
  *
@@ -71,6 +74,15 @@ export default (apiUrl, httpClient = fetchUtils.fetchJson) => {
       case UPDATE:
         url = `${apiUrl}/${resource}/${params.id}`;
         options.method = 'PUT';
+
+
+        if("name" in params.data && "value" in params.data && ["logotype", "opengraph_image"].includes(params.data.name)){
+
+          
+         // params.data._value = convertFileToBase64(params.data.value)
+
+        }
+      
 
         options.body = JSON.stringify(  transform( resource, params.data) );
         break;
@@ -155,3 +167,5 @@ export default (apiUrl, httpClient = fetchUtils.fetchJson) => {
     );
   };
 };
+
+
