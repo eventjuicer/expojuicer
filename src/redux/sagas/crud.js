@@ -75,7 +75,7 @@ export default function* saga() {
     takeEvery(PURCHASE_UPDATE_SUCCESS, onPurchaseUpdateSuccess),
 
     takeEvery(CRUD_UPDATE_SUCCESS, onResourceUpdate),
-    takeEvery(CRUD_CREATE_SUCCESS, handleSlackNotification),
-    takeEvery(CRUD_UPDATE_SUCCESS, handleSlackNotification)
+//    takeEvery(CRUD_CREATE_SUCCESS, handleSlackNotification),
+ //   takeEvery(CRUD_UPDATE_SUCCESS, handleSlackNotification)
   ]);
 }
