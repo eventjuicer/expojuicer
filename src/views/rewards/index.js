@@ -8,7 +8,7 @@ import Prize from './Prize';
 //import Photogrid from './Photogrid';
 
 import { getUserData } from '../../helpers';
-import { httpClient } from '../../api/restClient';
+import  httpClient  from '../../api/httpClient';
 import { Heading, Body, SectionTitle } from '../../components/Typography';
 import Wrapper from '../../components/Wrapper';
 

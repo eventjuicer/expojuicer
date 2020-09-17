@@ -8,12 +8,12 @@ export const validate = ({name, value}) => {
 
   switch(name)
   {
-    case "logotype":
+ //   case "logotype":
     case "facebook":
     case "linkedin":
     case "twitter":
     case "website":
-    case "opengraph_image":
+   // case "opengraph_image":
 
       if(value && ( ! value.includes("http") || ! value.match( validLink ) ) )
       {

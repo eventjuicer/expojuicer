@@ -11,12 +11,7 @@ const ViewList = props => (
     //  actions={<ListActions />}
     perPage={200}
   >
-    <Datagrid
-      bodyOptions={{
-        stripedRows: true,
-        showRowHover: false
-      }}
-    >
+    <Datagrid>
       <TextField source="created_at" sortable={false} />
       <TextField source="name" sortable={false} />
       <TextField source="contactlist" sortable={false} />

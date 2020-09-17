@@ -1,24 +1,39 @@
 import React from 'react';
 import {
   Edit,
-  SimpleForm
+  SimpleForm,
+  TextInput,
+  TopToolbar,
+  ListButton,
+  ShowButton
 } from 'react-admin';
 
+import ChevronLeft from '@material-ui/icons/ChevronLeft';
 import VarLabelTextField from '../../fields/VarLabelTextField'
 import VarTextInput from '../../fields/VarTextInput'
 import { Field } from 'react-final-form';
 import { validate } from './validation';
 import {translate} from 'react-admin';
+import {getLocalesArray} from '../../helpers'
 
-const langs = `${process.env.REACT_APP_LOCALES}`.split(",");
+
+const EditActions = ({ basePath, data }) => (
+  <TopToolbar>
+      <ListButton basePath={basePath} label="Back" icon={<ChevronLeft />} />
+      {/* <ShowButton basePath={basePath} record={data} /> */}
+  </TopToolbar>
+);
 
 const ViewEdit = props => (
 
-  <Edit {...props}
+  <Edit actions={<EditActions />} {...props}
     title={  <VarLabelTextField {...props} source="name" /> }
     >
 
     <SimpleForm  submitOnEnter={false} validate={validate}>
+
+
+      {/* <TextInput disabled label="Id" source="id" /> */}
 
       <VarLabelTextField source="name" translateKey="description" style={{marginTop: 10, marginBottom: 30}}/>
 
@@ -40,12 +55,12 @@ const ViewEdit = props => (
             'countries' :  [
               'national', 'europe', 'global', 'other'
             ],
-            'lang' :  langs || ["en"],
+            'lang' :  getLocalesArray() || ["en"],
           }
         }
 
         uploads={
-          ["opengraph_image"]
+          ["opengraph_image", "logotype"]
         }
 
         checkboxes={{

@@ -5,7 +5,7 @@ import { translate } from 'react-admin';
 import Card from '@material-ui/core/Card';
  
 
-import { httpClient } from '../../api/restClient';
+import httpClient from '../../api/httpClient';
 // import IconEmail from '@material-ui/icons/communication/email';
 // import IconImages from '@material-ui/icons/collections';
 import Image from './components/Image';

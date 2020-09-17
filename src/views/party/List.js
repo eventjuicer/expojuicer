@@ -20,9 +20,7 @@ const ViewList = props => (
     perPage={100}
     title={<ViewTitle {...props} title="ssss" subtitle="ssss" />}
   >
-    <Datagrid
-      bodyOptions={{ stripedRows: true, showRowHover: true }}
-    >
+    <Datagrid>
 
       <TextField source="profile.fname"  sortable={false} />
       <TextField source="profile.lname"  sortable={false} />

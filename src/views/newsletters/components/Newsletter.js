@@ -11,7 +11,7 @@ import Typography from '@material-ui/core/Typography';
 import IconDownload from '@material-ui/icons/GetApp';
 import IconZip from '@material-ui/icons/Archive';
 import Button from '@material-ui/core/Button';
-import { httpClient } from '../../../api/restClient';
+import httpClient  from '../../../api/httpClient';
 import Iframe from '../../../components/Iframe';
 import { getUserId } from '../../../helpers';
 

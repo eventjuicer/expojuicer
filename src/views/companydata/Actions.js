@@ -1,52 +1,75 @@
 
-import React from 'react';
-import CardActions  from '@material-ui/core/CardActions';
-import Button from '@material-ui/core/Button';
- 
+import React, { cloneElement, useMemo }  from 'react';
 import {Visibility as Eye, Refresh} from '@material-ui/icons';
+import PropTypes from 'prop-types';
+import { makeStyles } from '@material-ui/core/styles';
 
 import {
-  translate,
-  // ListButton,
-  // EditButton,
-  // DeleteButton
+    useListContext,
+    TopToolbar,
+    // CreateButton,
+    // ExportButton,
+    Button,
+    sanitizeListRestProps,
+    //useTranslate
 } from 'react-admin';
 
 import { getProfileUrl } from '../../helpers'
 
-const style = {
-  zIndex: 2,
-  display: 'inline-block',
-  float: 'right'
+const useStyles = makeStyles((theme) => ({
+  button: {
+    margin: theme.spacing(1),
+  },
+}));
+
+const ListActions = (props) => {
+
+    const {
+        className,
+        exporter,
+        filters,
+        maxResults,
+        ...rest
+    } = props;
+    
+    
+    const {
+        currentSort,
+        resource,
+        displayedFilters,
+        filterValues,
+        hasCreate,
+        basePath,
+        selectedIds,
+        showFilter,
+        total,
+    } = useListContext();
+
+    const classes = useStyles();
+
+
+    return (
+        <TopToolbar className={className} {...sanitizeListRestProps(rest)}>
+            {filters && cloneElement(filters, {
+                resource,
+                showFilter,
+                displayedFilters,
+                filterValues,
+                context: 'button',
+            })}
+          
+        <Button
+          variant="contained"
+          color="secondary"
+          href={getProfileUrl("", true)}
+          target="_blank"
+          label={`resources.${resource}.actions.preview`}
+          className={classes.button}><Eye /></Button>
+
+
+        </TopToolbar>
+    );
 };
 
+export default ListActions
 
-
-const Actions = ({ basePath, data, refresh, resource, translate, ...rest }) => (
-
-  <CardActions style={style}>
-
-    <Button
-      primary
-      label={translate(`resources.${resource}.actions.preview`)}
-      href={getProfileUrl("", true)}
-      target="_blank"
-      icon={<Eye />}
-    />
-
-    {/* <EditButton basePath={basePath} record={data} />
-    <ListButton basePath={basePath} />
-    <DeleteButton basePath={basePath} record={data} /> */}
-
-    <Button
-      primary
-      label={translate('aor.action.refresh')}
-      onClick={refresh}
-      icon={<Refresh />}
-    />
-    {/* Add your custom actions */}
-    {/* <Button primary label="Custom Action" onClick={customAction} /> */}
-  </CardActions>
-);
-
-export default translate(Actions);

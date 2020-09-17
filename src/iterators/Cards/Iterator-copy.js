@@ -31,44 +31,7 @@ const defaultStyles = {
         },
     },
 };
-
-/**
- * The Datagrid component renders a list of records as a table.
- * It is usually used as a child of the <List> and <ReferenceManyField> components.
- *
- * Props:
- *  - styles
- *  - rowStyle
- *  - options (passed as props to <Table>)
- *  - headerOptions (passed as props to mui <TableHeader>)
- *  - bodyOptions (passed as props to mui <TableBody>)
- *  - rowOptions (passed as props to mui <TableRow>)
- *
- * @example Display all posts as a datagrid
- * const postRowStyle = (record, index) => ({
- *     backgroundColor: record.nb_views >= 500 ? '#efe' : 'white',
- * });
- * export const PostList = (props) => (
- *     <List {...props}>
- *         <Datagrid rowStyle={postRowStyle}>
- *             <TextField source="id" />
- *             <TextField source="title" />
- *             <TextField source="body" />
- *             <EditButton />
- *         </Datagrid>
- *     </List>
- * );
- *
- * @example Display all the comments of the current post as a datagrid
- * <ReferenceManyField reference="comments" target="post_id">
- *     <Datagrid>
- *         <TextField source="id" />
- *         <TextField source="body" />
- *         <DateField source="created_at" />
- *         <EditButton />
- *     </Datagrid>
- * </ReferenceManyField>
- */
+ 
 class Datagrid extends Component {
     updateSort = event => {
         event.stopPropagation();

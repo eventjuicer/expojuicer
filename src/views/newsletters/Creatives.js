@@ -1,6 +1,6 @@
 import React from 'react';
 import { translate } from 'react-admin';
-import { httpClient } from '../../api/restClient';
+import httpClient  from '../../api/httpClient';
 // import IconEmail from '@material-ui/icons/communication/email';
 // import IconImages from '@material-ui/icons/collections';
 import Newsletter from './components/Newsletter';

@@ -19,6 +19,9 @@ import compose from 'recompose/compose';
 
 import { changeTheme as changeThemeAction } from '../../redux/actions';
 
+import {getLocalesArray} from '../../helpers'
+
+
 const styles = {
   label: { width: '10em', display: 'inline-block' },
   button: { margin: '1em' }
@@ -64,7 +67,7 @@ const Configuration = ({
 
 
 Configuration.defaultProps = {
-  locales : `${process.env.REACT_APP_LOCALES}`.split(",")
+  locales : getLocalesArray()
 }
 
 const mapStateToProps = state => ({

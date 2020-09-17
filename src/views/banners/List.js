@@ -30,18 +30,7 @@ const ViewList = props => (
   //  sort={{ field: 'cname2', order: 'ASC' }}
     perPage={100}
   >
-    <Datagrid
-      bodyOptions={{
-        stripedRows: true,
-        showRowHover: false,
-        displayRowCheckbox: false
-      }}
-      rowOptions={{ selectable: false }}
-      options={{
-        multiSelectable: false,
-        onRowSelection: test => console.log(test)
-      }}
-    >
+    <Datagrid>
       <TextField source="name" label="Name" />
       <TextField source="act_as" label="Type" />
       <DateField source="updated_at" label="Updated" />

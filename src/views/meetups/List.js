@@ -68,7 +68,7 @@ const ViewList = props => (
     //  sort={{ field: 'cname2', order: 'ASC' }}
     perPage={50}
   >
-    <Datagrid bodyOptions={{ stripedRows: true, showRowHover: true }}>
+    <Datagrid>
 
       <FullNameField
         source="participant.profile"

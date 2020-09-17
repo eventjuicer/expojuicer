@@ -16,19 +16,13 @@ const ViewList = props => (
     {...props}
     perPage={100}
   >
-    <Datagrid
-      bodyOptions={{ stripedRows: true, showRowHover: true }}
-    >
-
+    <Datagrid>
       <TextField source="profile.fname"  sortable={false} />
       <TextField source="profile.lname"  sortable={false} />
       <TextField source="profile.position"  sortable={false} />
       <TextField source="profile.phone"  sortable={false} />
-
-
       <EditButton />
       <DeleteButton />
-
     </Datagrid>
 </List>
 );

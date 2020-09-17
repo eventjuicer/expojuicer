@@ -18,21 +18,7 @@ const ViewList = props => (
     sort={{ field: 'lname', order: 'ASC' }}
     perPage={50}
   >
-    <Datagrid
-      //  headerOptions={{displaySelectAll: true, enableSelectAll : true}}
-      bodyOptions={{
-        stripedRows: true
-        // showRowHover: false,
-        //   displayRowCheckbox: true
-      }}
-      //    rowOptions={{ selectable: true }}
-      options={
-        {
-          // multiSelectable: true,
-          // onRowSelection: test => console.log(test)
-        }
-      }
-    >
+    <Datagrid>
       <TextField source="profile.fname"  sortable={false} />
       <TextField source="profile.lname"  sortable={false} />
       <TextField source="profile.cname2" sortable={false} />

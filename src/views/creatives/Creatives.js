@@ -2,7 +2,7 @@ import React from 'react';
 import { translate } from 'react-admin';
 import { Link } from 'react-router-dom';
 
-import { httpClient } from '../../api/restClient';
+import httpClient from '../../api/httpClient';
 import CreativeLink from './components/Link';
 //import { Heading, SectionTitle, Body } from '../../components/Typography';
 import Wrapper from '../../components/Wrapper';
