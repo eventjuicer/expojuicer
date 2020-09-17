@@ -1,4 +1,4 @@
-
+import {resolveBrowserLocale} from 'react-admin'
 import { fetchUtils } from 'react-admin';
 import get from 'lodash/get';
 import slugify from 'slugify'
@@ -42,8 +42,15 @@ export const lsGet = (key, ifNotFound = "") => {
 
 export const lsSet = (key, value) => localStorage.setItem(key, JSON.stringify(value))
 
+export const getLocalesArray = () => `${process.env.REACT_APP_LOCALES}`.split(",");
+
+
 export const getLocale = () => {
-  return lsGet("locale") || `${process.env.REACT_APP_LOCALE}` || "en"
+
+  const locales = getLocalesArray()
+  const browserLocale = locales.includes( resolveBrowserLocale() )? resolveBrowserLocale(): `${process.env.REACT_APP_LOCALE}`;
+
+  return lsGet("locale") || browserLocale
 }
 
 export const getToken = () => {
@@ -65,12 +72,15 @@ export const clearUserData = () => {
 export const timestamp = () => Math.floor(Date.now() / 1000)
 
 export const updatePerms = (redirectTo = "") => rawFetchApi("/settings", null, (data) => { 
+
+  const locales = getLocalesArray()
+
   if(!"account-modules" in data){
     return false
   }
   
   //save locale only when we dont have local one!
-  if("lang" in data && data.lang.length){
+  if(!lsGet("locale") && "lang" in data && locales.includes(data.lang) ){
     lsSet("locale", data.lang)
   }
 
