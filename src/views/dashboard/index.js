@@ -4,6 +4,10 @@ import withWidth from '@material-ui/core/withWidth';
 // import { AppBarMobile } from 'react-admin';
 import Welcome from './Welcome';
 import {List as TaskList} from '../tasks'
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import { Title } from 'react-admin';
+
 
 const styles = {
   welcome: { marginBottom: '5em' },
@@ -11,17 +15,17 @@ const styles = {
 
 const Dashboard = ({ width, history }) => (
 
-  <div style={styles.welcome}>
-
-    {/* {width === 1 && <AppBarMobile title={`${process.env.REACT_APP_SITENAME}`} />} */}
-
+  <Card>
+ 
+  <Title title="Hello!" />
+  <CardContent>
     <Welcome />
+  </CardContent>
 
-    {/* <TaskList location={history.location} basePath="tasks" /> */}
-
-  </div>
+</Card>
 
 )
 
 
 export default withWidth()(Dashboard);
+ 

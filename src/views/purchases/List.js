@@ -15,18 +15,26 @@ import PurchaseTicketsField from '../upgrades/PurchaseTicketsField'
 
 //import Actions from './ListActions';
 
-const VisitorFilter = props => (
+import Timeline from '../../iterators/Timeline'
+
+const PurchasesFilter = props => (
   <Filter {...props}>
-    <TextInput label="pos.search" source="q" alwaysOn />
+    {/* <TextInput label="pos.search" source="q" alwaysOn /> */}
   </Filter>
 );
 
+
+
+
 const ViewList = props => (
+  <>
   <List
     {...props}
-    filters={<VisitorFilter />}
+    filters={<PurchasesFilter />}
     sort={{ field: 'lname', order: 'ASC' }}
     perPage={100}
+    exporter={false}
+    bulkActionButtons={false}
   >
     <Datagrid>
 
@@ -38,6 +46,16 @@ const ViewList = props => (
 
     </Datagrid>
   </List>
+
+  <List {...props}>
+    <Timeline {...props} />
+  </List>
+  </>
 );
 
 export default ViewList;
+  
+
+
+
+

@@ -1,28 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Notification } from 'react-admin';
-
 import Card  from '@material-ui/core/Card';
 import Avatar from '@material-ui/core/Avatar';
 import LockIcon from '@material-ui/icons/LockOutlined';
-
 
 //import LoginByPassword from './LoginByPassword';
 //import LoginByRequest from './LoginByRequest';
 import LoginByToken from './LoginByToken';
 
-
 import styles from '../styles/landing';
-import { getColorsFromTheme, Provider } from '../styles/muiTheme';
-
+import { ThemeProvider } from '@material-ui/styles';
 
 const Logins = props => {
 
   const { theme } = props;
-  const { accent1Color } = getColorsFromTheme();
+  const { accent1Color } = theme.palette;
 
   return (
-    <Provider muiTheme={theme}>
+    <ThemeProvider theme={theme}>
       <div style={{ ...styles.main, backgroundColor: accent1Color }}>
         <Card style={(styles.card, styles.secondary)}>
           <div style={styles.avatar}>
@@ -50,7 +46,7 @@ const Logins = props => {
 
         <Notification />
       </div>
-    </Provider>
+    </ThemeProvider>
   );
 };
 

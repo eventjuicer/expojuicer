@@ -1,6 +1,7 @@
 //import 'babel-polyfill';
 import React from 'react';
 import { Admin, Resource, Delete, fetchUtils } from 'react-admin';
+import TreeMenu from '@bb-tech/ra-treemenu';
 
 
 import polyglotI18nProvider from 'ra-i18n-polyglot';
@@ -8,7 +9,7 @@ import AppBarTitle from './components/AppBarTitle';
 import Logins from './components/Logins';
 import Logout from './components/Logout';
 import NotFound from './components/NotFound';
-import Menu from './components/Menu';
+ 
 import customRoutes from './components/routes';
 
 import {
@@ -112,20 +113,15 @@ import { ViewList as ScanList, ViewEdit as ScanEdit } from './views/scans';
 import { ViewList as RankingList } from './views/ranking';
 
 
-
-
-
-
-
-
-
-
 const defaulTranslations = {
   en: defaultEnglishTranslations,
   de: defaultGermanTranslations,
   pl: defaultPolishTranslations
 }
 
+const uploadCapableDataProvider = addUploadFeature(
+  eventjuicerApiClient( `${process.env.REACT_APP_API_ENDPOINT}`, httpClient)
+);
 const i18nProvider = polyglotI18nProvider((locale) => {
 
     return {...defaulTranslations[locale], ...backupTranslations[locale]}
@@ -143,57 +139,43 @@ const i18nProvider = polyglotI18nProvider((locale) => {
 
        // catchAll={NotFound}
         // title={<AppBarTitle />}     
-        // dashboard={Dashboard}
-        // loginPage={Logins}
+      
+  
         // logoutButton={Logout}
-        // menu={Menu}
-        // theme={ getTheme() }
-   
-
-const uploadCapableDataProvider = addUploadFeature(
-  eventjuicerApiClient( `${process.env.REACT_APP_API_ENDPOINT}`, httpClient)
-);
 
 
+const knownResources = [
 
-const App = (props) => (
+  <Resource name="companydata" list={CompanyDataList} edit={CompanyDataEdit} />,
+  <Resource name="purchases" list={PurchaseList} />,
+  <Resource name="upgrades" list={UpgradeList} show={UpgradeShow} />
+];
 
-  <Admin
-    
+const fetchResources = (permissions) => new Promise((resolve, reject) => {
+
+  const filtered = knownResources.filter(component => hasAccessTo(permissions, component.props.name))
+
+  resolve(filtered)
+
+})
+
+const App = (props) =>  <Admin
     dataProvider={ uploadCapableDataProvider }
     authProvider={ authClient }
     i18nProvider={ i18nProvider }
-
+    //dashboard={ Dashboard }
     //yet to be checked
-    customReducers={reducers}
-    customSagas={sagas}
-    customRoutes={customRoutes}
-
-  >{
-    (permissions) => {
-      
-      // console.log(permissions)
-      
-      return [
-        <Resource name="companydata" list={CompanyDataList} edit={CompanyDataEdit} />
-      ]
-    }
-  }
-  
-
-  
-  </Admin>
-
-)
+    loginPage={ Logins }
+    customReducers={ reducers }
+    customSagas={ sagas }
+    customRoutes={ customRoutes }
+    theme={ getTheme() }>{fetchResources}</Admin>
 
       
-
-
 
 
 //
 
-// <Resource name="purchases" list={PurchaseList} />,
 
 // <Resource
 //   name="imports"
@@ -227,11 +209,7 @@ const App = (props) => (
 // />,
 
 
-// <Resource
-//   name="upgrades"
-//   list={hasAccessTo(permissions, "upgrades", "list") ? UpgradeList : null}
-//   show={hasAccessTo(permissions, "upgrades", "edit") ? UpgradeShow : null}
-// />,
+
 
 // <Resource
 //   name="contactlists"
@@ -289,6 +267,17 @@ const App = (props) => (
 
 // <Resource name="tasks" />
 // 
+
+
+
+
+
+    
+   
+
+
+
+
 
 
 

@@ -51,8 +51,8 @@ const CustomIterator = ({ ids, data, basePath, locale, translate, push }) => (
             />
 
             <div style={{position : 'relative'}}>
-                <CardMedia 
-                overlay={
+                {/* <CardMedia 
+                // overlay
                 <CardHeader 
                     title={
                         data[id].bookable > 0 || data[id].booked > 0 ? 
@@ -74,7 +74,7 @@ const CustomIterator = ({ ids, data, basePath, locale, translate, push }) => (
                     backgroundRepeat : 'no-repeat',
                     height : 270,
                 }}
-            />
+            /> */}
             <div style={{
                 position : 'absolute', 
                 zIndex : 2,

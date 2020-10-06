@@ -3,12 +3,15 @@ import React from 'react';
 import {
   TextInput,
   CheckboxGroupInput,
-  RadioButtonGroupInput
+  RadioButtonGroupInput,
+  FileInput,
+  FileField
 } from 'react-admin'
 
 import pure from 'recompose/pure'
 
 import RichTextInput from 'ra-input-rich-text';
+// import MarkdownInput from 'ra-input-markdown';
 
 //https://quilljs.com/docs/modules/toolbar/
 
@@ -42,13 +45,13 @@ const VarTextInput = props => {
 
   const name = record.name;
 
-  // if(name in uploads){
-  //
-  //     <Dropzone onDrop={() => alert("asd")}>
-  //       <p>upload</p>
-  //     </Dropzone>
-  //
-  // }
+  if(uploads.includes(name)){
+  
+     return <FileInput accept="image/*,.pdf"  {...props}><FileField source="src" title="title" /></FileInput>
+  
+  }
+
+  console.log(name, uploads)
 
   if(name in radios)
   {
@@ -56,8 +59,7 @@ const VarTextInput = props => {
 
   }
 
-  if(name in checkboxes)
-  {
+  if(name in checkboxes){
     return <div>
       <CheckboxGroupInput
       {...props}
@@ -71,6 +73,7 @@ const VarTextInput = props => {
 
   if(html.indexOf(name) > -1)
   {
+   // return <MarkdownInput {...props} />
     return <RichTextInput {...props} toolbar={[
     //  [{ 'header': 3 }],
       ['bold', 'italic', 'link'],

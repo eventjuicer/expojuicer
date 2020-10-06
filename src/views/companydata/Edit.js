@@ -5,7 +5,9 @@ import {
   TextInput,
   TopToolbar,
   ListButton,
-  ShowButton
+  ShowButton,
+  Toolbar,
+  SaveButton
 } from 'react-admin';
 
 import ChevronLeft from '@material-ui/icons/ChevronLeft';
@@ -24,13 +26,20 @@ const EditActions = ({ basePath, data }) => (
   </TopToolbar>
 );
 
+
+const EditToolbar = props => (
+  <Toolbar {...props} >
+      <SaveButton />
+  </Toolbar>
+);
+
 const ViewEdit = props => (
 
   <Edit actions={<EditActions />} {...props}
     title={  <VarLabelTextField {...props} source="name" /> }
     >
 
-    <SimpleForm  submitOnEnter={false} validate={validate}>
+    <SimpleForm  submitOnEnter={false} validate={validate} toolbar={ <EditToolbar /> }>
 
 
       {/* <TextInput disabled label="Id" source="id" /> */}

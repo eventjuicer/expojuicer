@@ -16,12 +16,7 @@ const stripTags = html => {
 }
 
 const styles = {
-
-  chip : {
-    margin: 3,
-    color: 'white'
-  },
-
+ 
   wrapper: {
     display: 'flex',
     flexWrap: 'wrap',
@@ -38,23 +33,26 @@ const MultiContentField = ({basePath, record, resource, source, translate, baseL
 
   const _translatable = baseLabel(record)
 
-  if(isHTML(value))
-  {
+  if(new Object(value) === value){
+    return "error"
+  }
+
+
+  if(isHTML(value)) {
     return stripTags(value)
   }
 
-  if(Array.isArray(value))
-  {
+  if(Array.isArray(value)) {
     return <div style={styles.wrapper}>{value.map(item => <Chip key={item}
-      backgroundColor={accent3Color}
-      labelColor="#ffffff"
-      style={styles.chip}>{_translatable ? translate(_translatable + item) : item}</Chip>)}</div>
+      color="secondary"
+      label={_translatable ? translate(_translatable + item) : item}
+      />)}</div>
   }
 
-  if(_translatable && value.length)
-  {
+  if(_translatable && value.length) {
       return translate(_translatable + value)
   }
+
 
   return value;
 
